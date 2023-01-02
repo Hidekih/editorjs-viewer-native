@@ -1,0 +1,27 @@
+{
+  "name": "editorjsviewernative",
+  "version": "0.0.1",
+  "description": "A React Native viewer for JSON created by EditorJs",
+  "main": "lib/index.js",
+  "repository": "https://github.com/Hidekih/rn-editorjs-viewer",
+  "author": "Alexandre Hideki Siroma",
+  "license": "MIT",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "@types/react-native": "^0.70.8",
+    "react": "^18.2.0",
+    "react-native": "^0.70.6",
+    "typescript": "^4.9.4"
+  },
+  "peerDependencies": {
+    "@types/react": "*",
+    "@types/react-native": "*",
+    "react": "*",
+    "react-native": "*"
+  }
+}
