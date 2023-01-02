@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A React Native viewer for JSON created by EditorJs",
   "main": "lib/index.js",
-  "repository": "https://github.com/Hidekih/rn-editorjs-viewer",
+  "repository": "https://github.com/Hidekih/editorjs-viewer-native",
   "author": "Alexandre Hideki Siroma",
   "license": "MIT",
   "types": "lib/index.d.ts",
