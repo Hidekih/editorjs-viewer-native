@@ -5,7 +5,11 @@ import { ParagraphProps } from "./types";
 
 export const Paragraph = ({ children }: ParagraphProps) => {
     return (
-        <Text>
+        <Text
+            accessible={true}
+            accessibilityRole="text"
+            allowFontScaling={true}
+        >
             {children}
         </Text>
     )
