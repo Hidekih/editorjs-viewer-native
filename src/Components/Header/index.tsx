@@ -1,8 +1,12 @@
-import { Text, TextProps } from "react-native";
+import { Text } from "react-native";
 
-export const Header = ({ children }: TextProps) => {
+import { HeaderProps } from "./types";
+
+export const Header = ({ level, children }: HeaderProps) => {
+    const stylesByHeadingLevel = useMemo((styles[level]) => (), []);
+
     return (
-        <Text>{children}</Text>
+        <Text styles={stylesByHeadingLevel}>{children}</Text>
     )
 }
 
