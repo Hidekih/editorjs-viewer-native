@@ -6,7 +6,14 @@ export const Header = ({ level, children }: HeaderProps) => {
     const stylesByHeadingLevel = useMemo((styles[level]) => (), []);
 
     return (
-        <Text styles={stylesByHeadingLevel}>{children}</Text>
+        <Text 
+            accessible={true}
+            accessibilityRole="header"
+            allowFontScaling={true}
+            styles={stylesByHeadingLevel}
+        >
+            {children}
+        </Text>
     )
 }
 
