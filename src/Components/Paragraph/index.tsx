@@ -1,18 +1,25 @@
+import { memo } from "react";
 import { Text } from "react-native";
 
-import { styles } from "./styles"; 
+import { useParseHtmlTags } from "../../hooks/useParseHtmlTags";
 import { ParagraphProps } from "./types";
+import { styles } from "./styles"; 
 
-export const Paragraph = ({ children }: ParagraphProps) => {
+export const Paragraph = ({ data }: ParagraphProps) => {
+    const { parseHtmlTags } = useParseHtmlTags();
+    
+    const textParsed = parseHtmlTags(data.text);
+
     return (
         <Text
             accessible={true}
             accessibilityRole="text"
             allowFontScaling={true}
+            style={styles.paragraph}
         >
-            {children}
+            {textParsed}
         </Text>
     )
 }
 
-export default Paragraph;
+export default memo(Paragraph);

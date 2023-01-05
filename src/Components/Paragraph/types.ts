@@ -1,5 +1,12 @@
 import { TextProps } from "react-native";
 
-export type ParagraphProps = {} & TextProps;
+type ParagraphData = {
+    text: string;
+    [key: string]: any;
+}
+
+export type ParagraphProps = {
+    data: ParagraphData;
+} & TextProps;
 
 export default ParagraphProps;

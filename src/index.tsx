@@ -1,18 +1,26 @@
 import { View, Text } from "react-native";
 
-import { styles } from "./styles"; 
-import { EditorJsViwerNativeProps } from "./types";
 import { Paragraph } from "./Components/Paragraph/index";
+import Header from "./Components/Header/index";
+
+import { EditorJsViwerNativeProps } from "./types";
+import { styles } from "./styles"; 
 
 export const EditorJsViwerNative = ({ data }: EditorJsViwerNativeProps) => {
     return (
         <View>
-            { data.blocks.map((block) => {
+            {data.blocks.map((block) => {
                 switch (block.type) {
                     case "paragraph": return (
-                        <Paragraph>
+                        <Paragraph data={block.data}>
                             {block.data}
                         </Paragraph>
+                    );
+
+                    case "header": return (
+                        <Header data={block.data}>
+                            {block.data}
+                        </Header>
                     );
 
                     default: return (
@@ -21,7 +29,7 @@ export const EditorJsViwerNative = ({ data }: EditorJsViwerNativeProps) => {
                         </Text>
                     );
                 }
-            }) }
+            })}
         </View>
     )
 }
