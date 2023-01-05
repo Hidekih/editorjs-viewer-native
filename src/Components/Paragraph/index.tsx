@@ -5,7 +5,7 @@ import { useParseHtmlTags } from "../../hooks/useParseHtmlTags";
 import { ParagraphProps } from "./types";
 import { styles } from "./styles"; 
 
-export const Paragraph = ({ data }: ParagraphProps) => {
+const Paragraph = ({ data }: ParagraphProps) => {
     const { parseHtmlTags } = useParseHtmlTags();
     
     const textParsed = parseHtmlTags(data.text);

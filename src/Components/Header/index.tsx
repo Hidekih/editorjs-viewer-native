@@ -4,7 +4,7 @@ import { useMemo, memo } from "React";
 import { styles } from "./styles";
 import { HeaderProps } from "./types";
 
-export const Header = ({ data }: HeaderProps) => {
+const Header = ({ data }: HeaderProps) => {
     const stylesByHeadingLevel = useMemo(() => styles[`h${data.level}`], []);
 
     return (

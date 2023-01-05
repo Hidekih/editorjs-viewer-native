@@ -7,6 +7,7 @@
       "strict": true,
       "jsx": "react-native",
       "skipLibCheck": true,
+      "moduleResolution": "node"
     },
     "include": [
       "src"

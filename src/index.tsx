@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 
-import { Paragraph } from "./Components/Paragraph/index";
-import Header from "./Components/Header/index";
+import Paragraph from "./components/Paragraph";
+import Header from "./components/Header";
 
 import { EditorJsViwerNativeProps } from "./types";
 import { styles } from "./styles"; 
