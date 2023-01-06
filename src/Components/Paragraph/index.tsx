@@ -5,13 +5,14 @@ import { useParseHtmlTags } from "../../hooks/useParseHtmlTags";
 import { ParagraphProps } from "./types";
 import { styles } from "./styles"; 
 
-const Paragraph = ({ data }: ParagraphProps) => {
+const Paragraph = ({ data, ...rest }: ParagraphProps) => {
     const { parseHtmlTags } = useParseHtmlTags();
     
     const textParsed = parseHtmlTags(data.text);
 
     return (
         <Text
+            {...rest}
             accessible={true}
             accessibilityRole="text"
             allowFontScaling={true}

@@ -12,15 +12,11 @@ export const EditorJsViwerNative = ({ data }: EditorJsViwerNativeProps) => {
             {data.blocks.map((block) => {
                 switch (block.type) {
                     case "paragraph": return (
-                        <Paragraph data={block.data}>
-                            {block.data}
-                        </Paragraph>
+                        <Paragraph key={block.id} data={block.data} />
                     );
 
                     case "header": return (
-                        <Header data={block.data}>
-                            {block.data}
-                        </Header>
+                        <Header key={block.id} data={block.data} />
                     );
 
                     default: return (

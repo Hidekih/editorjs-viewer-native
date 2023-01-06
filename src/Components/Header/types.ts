@@ -7,6 +7,7 @@ type HeaderData = {
 
 export type HeaderProps = {
     data: HeaderData;
+    fontFamily?: string;
 } & TextProps;
 
 export default HeaderProps;
