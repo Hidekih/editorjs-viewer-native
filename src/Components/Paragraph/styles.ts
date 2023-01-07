@@ -2,7 +2,8 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     paragraph: {
-        // Todo
+        marginVertical: 6,
+        color: "#292929",
     }
 })
 
