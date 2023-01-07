@@ -13,7 +13,7 @@ const Header = ({ data, fontFamily, ...rest }: HeaderProps) => {
             accessible={true}
             accessibilityRole="header"
             allowFontScaling={true}
-            style={{ ...stylesByHeadingLevel, fontFamily }}
+            style={{ ...styles.global, ...stylesByHeadingLevel, fontFamily }}
         >
             {data.text}
         </Text>
