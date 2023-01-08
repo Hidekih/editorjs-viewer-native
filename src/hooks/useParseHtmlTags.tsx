@@ -5,13 +5,14 @@ import { decode } from "html-entities";
 
 import Strong from "../components/Strong";
 import Code from "../components/Code";
+import Italic from "../components/Italic";
 
 export const useParseHtmlTags = () => {
     const defaultListTags = useMemo(() => [
         "b",
         "code",
+        "i",
         // "mark",
-        // "i",
     ], []);
 
     const getTagName = useCallback((value: string) => {
@@ -25,6 +26,7 @@ export const useParseHtmlTags = () => {
         switch (name) {
             case "b": return Strong;
             case "code": return Code;
+            case "i": return Italic;
     
             default: return Text;
         }
