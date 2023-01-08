@@ -1,29 +1,23 @@
-import { memo } from "react";
-import { Text, useWindowDimensions } from "react-native";
+import { memo, useMemo } from "react";
+import { Text } from "react-native";
 
-import RenderHtml from 'react-native-render-html';
-
+import { useParseHtmlTags } from "../../hooks/useParseHtmlTags";
 import { ParagraphProps } from "./types";
 import { styles } from "./styles"; 
 
 const Paragraph = ({ data }: ParagraphProps) => {
-    const { width } = useWindowDimensions();
+    const { parseHtmlTag, defaultListTags } = useParseHtmlTags();
 
-    const source = {
-        html: data.text,
-    };
+    const parsedText = useMemo(() => parseHtmlTag(defaultListTags, data.text), []);
 
     return (
         <Text
             accessible
             accessibilityRole="text"
             allowFontScaling={true}
+            style={styles.paragraph}
         >   
-            <RenderHtml
-                source={source}
-                contentWidth={width}
-                baseStyle={styles.paragraph}
-            />
+            {parsedText}
         </Text>
     )
 }

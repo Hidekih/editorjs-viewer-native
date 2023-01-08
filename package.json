@@ -11,8 +11,7 @@
     "lib/**/*"
   ],
   "dependencies": {
-    "html-entities": "^2.3.3",
-    "react-native-render-html": "^6.3.4"
+    "html-entities": "^2.3.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

@@ -1,14 +1,14 @@
+import { useMemo } from "react";
 import { Text, View } from "react-native";
 
-import RenderHtml from 'react-native-render-html';
-
+import { useParseHtmlTags } from "../../../hooks/useParseHtmlTags";
 import { styles } from "./styles";
 import { ItemListProps } from "./types";
 
-export const ItemList = ({ value, width, style, index }: ItemListProps) => {
-    const source = {
-        html: value,
-    };
+export const ItemList = ({ value, listStyle, index }: ItemListProps) => {
+    const { parseHtmlTag, defaultListTags } = useParseHtmlTags();
+
+    const parsedText = useMemo(() => parseHtmlTag(defaultListTags, value), []);
 
     return (
         <View style={styles.container}>
@@ -16,19 +16,16 @@ export const ItemList = ({ value, width, style, index }: ItemListProps) => {
                 {
                     "ordered": <View style={styles.dot}/>,
                     "unordered": <Text style={{ ...styles.listItem, marginRight: 16 }}>{index + 1}</Text>
-                }[style]
+                }[listStyle]
             }
 
             <Text
                 accessible
                 accessibilityRole="text"
                 allowFontScaling={true}
-            >   
-                <RenderHtml
-                    source={source}
-                    contentWidth={width}
-                    baseStyle={styles.listItem}
-                />
+                style={styles.listItem}
+            >     
+                {parsedText}
             </Text>
         </View>
     )
