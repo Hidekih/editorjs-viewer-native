@@ -10,7 +10,9 @@
   "files": [
     "lib/**/*"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "react-native-render-html": "^6.3.4"
+  },
   "devDependencies": {
     "@types/react": "^18.0.26",
     "@types/react-native": "^0.70.8",
