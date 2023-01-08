@@ -1,9 +1,9 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-    italic: {
-        fontStyle: 'italic'
-    }
-})
+  italic: {
+    fontStyle: 'italic'
+  }
+});
 
 export default styles;

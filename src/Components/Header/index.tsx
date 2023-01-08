@@ -1,23 +1,23 @@
-import { Text } from "react-native";
-import { useMemo, memo } from "react";
+import { Text } from 'react-native';
+import { useMemo, memo } from 'react';
 
-import { styles } from "./styles";
-import { HeaderProps } from "./types";
+import { styles } from './styles';
+import { HeaderProps } from './types';
 
 const Header = ({ data, fontFamily, ...rest }: HeaderProps) => {
-    const stylesByHeadingLevel = useMemo(() => styles[`h${data.level}`], []);
+  const stylesByHeadingLevel = useMemo(() => styles[`h${data.level}`], []);
 
-    return (
-        <Text
-            {...rest}
-            accessible={true}
-            accessibilityRole="header"
-            allowFontScaling={true}
-            style={{ ...styles.global, ...stylesByHeadingLevel, fontFamily }}
-        >
-            {data.text}
-        </Text>
-    )
-}
+  return (
+    <Text
+      {...rest}
+      accessible={true}
+      accessibilityRole="header"
+      allowFontScaling={true}
+      style={{ ...styles.global, ...stylesByHeadingLevel, fontFamily }}
+    >
+      {data.text}
+    </Text>
+  );
+};
 
 export default memo(Header);

@@ -1,9 +1,9 @@
-import { ViewProps } from "react-native";
+import { ViewProps } from 'react-native';
 
-import { EditorJsData } from "./types/editorJsDataProps";
+import { EditorJsData } from './types/editorJsDataProps';
 
 export type EditorJsViwerNativeProps = {
-    data: EditorJsData;
-} & Pick<ViewProps, "style">;
+  data: EditorJsData;
+} & Pick<ViewProps, 'style'>;
 
 export default EditorJsViwerNativeProps;

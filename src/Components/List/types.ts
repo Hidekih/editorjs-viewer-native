@@ -1,13 +1,13 @@
-import { TextProps } from "react-native";
+import { TextProps } from 'react-native';
 
 export type ListData = {
-    items: Array<string>;
-    style: "ordered" | "unordered";
-    [key: string]: any;
+  items: Array<string>;
+  style: 'ordered' | 'unordered';
+  [key: string]: any;
 }
 
 export type ListProps = {
-    data: ListData;
+  data: ListData;
 } & TextProps;
 
 export default ListProps;

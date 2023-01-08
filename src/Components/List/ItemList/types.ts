@@ -1,7 +1,7 @@
-import { ListData } from "../types";
+import { ListData } from '../types';
 
 export type ItemListProps = {
-    value: string;
-    index: number;
-    listStyle: ListData["style"];
+  value: string;
+  index: number;
+  listStyle: ListData['style'];
 }

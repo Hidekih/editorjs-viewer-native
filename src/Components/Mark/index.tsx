@@ -1,18 +1,18 @@
-import { memo } from "react";
-import { Text } from "react-native";
+import { memo } from 'react';
+import { Text } from 'react-native';
 
-import { styles } from "./styles";
-import { MarkProps } from "./types";
+import { styles } from './styles';
+import { MarkProps } from './types';
 
 const Mark = ({ children }: MarkProps) => {
-    return (
-        <Text
-            allowFontScaling={true}
-            style={styles.mark}
-        >   
-            {children}
-        </Text>
-    )
-}
+  return (
+    <Text
+      allowFontScaling={true}
+      style={styles.mark}
+    >
+      {children}
+    </Text>
+  );
+};
 
 export default memo(Mark);
