@@ -2,13 +2,13 @@ import { View, Text } from "react-native";
 
 import Paragraph from "./components/Paragraph";
 import Header from "./components/Header";
+import List from "./components/List";
 
 import { EditorJsViwerNativeProps } from "./types";
-import { styles } from "./styles"; 
 
-export const EditorJsViwerNative = ({ data }: EditorJsViwerNativeProps) => {
+export const EditorJsViwerNative = ({ data, ...rest }: EditorJsViwerNativeProps) => {
     return (
-        <View>
+        <View {...rest}>
             {data.blocks.map((block) => {
                 switch (block.type) {
                     case "paragraph": return (
@@ -18,6 +18,10 @@ export const EditorJsViwerNative = ({ data }: EditorJsViwerNativeProps) => {
                     case "header": return (
                         <Header key={block.id} data={block.data} />
                     );
+
+                    case "list": return (
+                        <List key={block.id} data={block.data}/>
+                    )
 
                     default: return (
                         <Text>
