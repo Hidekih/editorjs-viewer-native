@@ -6,13 +6,14 @@ import { decode } from "html-entities";
 import Strong from "../components/Strong";
 import Code from "../components/Code";
 import Italic from "../components/Italic";
+import Mark from "../components/Mark";
 
 export const useParseHtmlTags = () => {
     const defaultListTags = useMemo(() => [
         "b",
         "code",
         "i",
-        // "mark",
+        "mark",
     ], []);
 
     const getTagName = useCallback((value: string) => {
@@ -27,6 +28,7 @@ export const useParseHtmlTags = () => {
             case "b": return Strong;
             case "code": return Code;
             case "i": return Italic;
+            case "mark": return Mark;
     
             default: return Text;
         }
@@ -137,6 +139,3 @@ export const useParseHtmlTags = () => {
         parseHtmlTag,
     }
 }
-
-
-
