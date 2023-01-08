@@ -9,7 +9,7 @@ import Code from "../components/Code";
 export const useParseHtmlTags = () => {
     const defaultListTags = useMemo(() => [
         "b",
-        // "code",
+        "code",
         // "mark",
         // "i",
     ], []);
@@ -24,7 +24,7 @@ export const useParseHtmlTags = () => {
     const getComponentByName = useCallback((name: string) => {
         switch (name) {
             case "b": return Strong;
-            // case "code": return Code;
+            case "code": return Code;
     
             default: return Text;
         }
