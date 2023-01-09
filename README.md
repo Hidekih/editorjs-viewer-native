@@ -13,7 +13,7 @@ Alpha version coming soon!
 [X] Header
 [X] List
 [X] Simple Image
-[] Image
+[X] Image
 [] Quote
 [] Link embeds
 [] Embeds

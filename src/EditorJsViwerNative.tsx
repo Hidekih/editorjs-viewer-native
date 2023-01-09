@@ -5,6 +5,7 @@ import Paragraph from './components/Paragraph';
 import Header from './components/Header';
 import List from './components/List';
 import SimpleImage from './components/SimpleImage';
+import ImageFrame from './components/ImageFrame';
 
 import { EditorJsViwerNativeProps } from './types';
 
@@ -27,6 +28,10 @@ const EditorJsViwerNative = memo(({ data, ...rest }: EditorJsViwerNativeProps) =
 
           case 'list': return (
             <List key={block.id} data={block.data}/>
+          );
+
+          case 'image': return (
+            <ImageFrame key={block.id} data={block.data}/>
           );
 
           case 'simpleImage': return (
