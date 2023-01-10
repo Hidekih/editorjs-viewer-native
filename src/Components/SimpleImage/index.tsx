@@ -7,11 +7,16 @@ import { styles } from './styles';
 
 const SimpleImage = ({ data }: SimpleImageProps) => {
   return (
-    <View style={{
-      ...styles.container,
-      height: data.caption ? IMAGEHEIGHT + 24 : IMAGEHEIGHT,
-    }}>
+    <View
+      accessible
+      accessibilityLabel={data.caption}
+      style={{
+        ...styles.container,
+        height: data.caption ? IMAGEHEIGHT + 24 : IMAGEHEIGHT,
+      }}
+    >
       <Image
+        accessibilityRole='image'
         source={{
           uri: data.url,
           cache: 'force-cache',

@@ -14,12 +14,11 @@ Alpha version coming soon!
 - [X] List
 - [X] Simple Image
 - [X] Image
-- [ ] Quote
 - [ ] Link embeds
-- [ ] Embeds
-
+- [ ] Quote
 
 **After alpha version**
 - [ ] Checklist
 - [ ] Table
 - [ ] Raw HTML blocks
+- [ ] Embeds
