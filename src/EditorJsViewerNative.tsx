@@ -20,29 +20,30 @@ const EditorJsViewerNative = memo(({ data, ...rest }: EditorJsViwerNativeProps) 
         }
 
         switch (block.type) {
-          case 'paragraph': return (
-            <Paragraph key={block.id} data={block.data} />
-          );
-
           case 'header': return (
             <Header key={block.id} data={block.data} />
-          );
-
-          case 'list': return (
-            <List key={block.id} data={block.data}/>
           );
 
           case 'image': return (
             <ImageFrame key={block.id} data={block.data}/>
           );
 
+          case 'linkTool': return (
+            <Bookmark key={block.id} data={block.data}/>
+          );
+
+          case 'list': return (
+            <List key={block.id} data={block.data}/>
+          );
+
+          case 'paragraph': return (
+            <Paragraph key={block.id} data={block.data} />
+          );
+
           case 'simpleImage': return (
             <SimpleImage key={block.id} data={block.data}/>
           );
 
-          case 'linkTool': return (
-            <Bookmark key={block.id} data={block.data}/>
-          );
 
           default: return <FallbackBlock key={block.id} blockType={block.type}/>;
         }

@@ -27,7 +27,7 @@ const Bookmark = ({ data: { link, meta } }: BookmarkProps) => {
         accessibilityHint="Clique para abrir o link"
         activeOpacity={0.2}
         style={styles.wrapper}
-        onPress={() => console.log('Open web view')}
+        onPress={() => toggleWebViewIsOpen()}
       >
         <View style={styles.container}>
           <View style={styles.dataContainer}>
