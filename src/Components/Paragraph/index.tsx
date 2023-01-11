@@ -1,4 +1,4 @@
-import { memo, useMemo } from 'react';
+import { useMemo } from 'react';
 import { Text } from 'react-native';
 
 import { useParseHtmlTags } from '../../hooks/useParseHtmlTags';
@@ -22,4 +22,4 @@ const Paragraph = ({ data }: ParagraphProps) => {
   );
 };
 
-export default memo(Paragraph);
+export { Paragraph };

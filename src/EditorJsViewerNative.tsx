@@ -1,7 +1,8 @@
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { memo } from 'react';
 
-import Paragraph from './components/Paragraph';
+import { FallbackBlock } from './components/FallbackBlock';
+import { Paragraph } from './components/Paragraph';
 import Header from './components/Header';
 import List from './components/List';
 import SimpleImage from './components/SimpleImage';
@@ -43,11 +44,7 @@ const EditorJsViewerNative = memo(({ data, ...rest }: EditorJsViwerNativeProps) 
             <Bookmark key={block.id} data={block.data}/>
           );
 
-          default: return (
-            <Text>
-              O tipo &quot;{block.type}&quot; ainda não é suportado pelo EditorJs Viwer Native
-            </Text>
-          );
+          default: return <FallbackBlock key={block.id} blockType={block.type}/>;
         }
       })}
     </View>

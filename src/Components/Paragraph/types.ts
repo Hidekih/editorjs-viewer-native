@@ -8,5 +8,3 @@ type ParagraphData = {
 export type ParagraphProps = {
   data: ParagraphData;
 } & TextProps;
-
-export default ParagraphProps;
