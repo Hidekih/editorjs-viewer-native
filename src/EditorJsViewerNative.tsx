@@ -6,10 +6,11 @@ import Header from './components/Header';
 import List from './components/List';
 import SimpleImage from './components/SimpleImage';
 import ImageFrame from './components/ImageFrame';
+import Bookmark from './components/Bookmark';
 
 import { EditorJsViwerNativeProps } from './types';
 
-const EditorJsViwerNative = memo(({ data, ...rest }: EditorJsViwerNativeProps) => {
+const EditorJsViewerNative = memo(({ data, ...rest }: EditorJsViwerNativeProps) => {
   return (
     <View style={{ width: '100%' }} {...rest}>
       {data.blocks.map((block) => {
@@ -38,6 +39,10 @@ const EditorJsViwerNative = memo(({ data, ...rest }: EditorJsViwerNativeProps) =
             <SimpleImage key={block.id} data={block.data}/>
           );
 
+          case 'linkTool': return (
+            <Bookmark key={block.id} data={block.data}/>
+          );
+
           default: return (
             <Text>
               O tipo &quot;{block.type}&quot; ainda não é suportado pelo EditorJs Viwer Native
@@ -49,6 +54,6 @@ const EditorJsViwerNative = memo(({ data, ...rest }: EditorJsViwerNativeProps) =
   );
 });
 
-EditorJsViwerNative.displayName = 'EditorJsViwerNative';
+EditorJsViewerNative.displayName = 'EditorJsViewerNative';
 
-export { EditorJsViwerNative };
+export { EditorJsViewerNative };
