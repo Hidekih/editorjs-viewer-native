@@ -14,11 +14,15 @@ Alpha version coming soon!
 - [X] List
 - [X] Simple Image
 - [X] Image
-- [ ] Link embeds
+- [X] Link embeds
 - [ ] Quote
+
+- [ ] CreateEditorJsViewer function
 
 **After alpha version**
 - [ ] Checklist
 - [ ] Table
 - [ ] Raw HTML blocks
 - [ ] Embeds
+
+More integrations in the future!

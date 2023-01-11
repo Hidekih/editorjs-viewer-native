@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import { Text } from 'react-native';
 
 import { styles } from './styles';
@@ -15,4 +14,4 @@ const Mark = ({ children }: MarkProps) => {
   );
 };
 
-export default memo(Mark);
+export { Mark };

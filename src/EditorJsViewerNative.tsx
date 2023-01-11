@@ -3,11 +3,11 @@ import { memo } from 'react';
 
 import { FallbackBlock } from './components/FallbackBlock';
 import { Paragraph } from './components/Paragraph';
-import Header from './components/Header';
-import List from './components/List';
-import SimpleImage from './components/SimpleImage';
-import ImageFrame from './components/ImageFrame';
-import Bookmark from './components/Bookmark';
+import { Header } from './components/Header';
+import { List } from './components/List';
+import { SimpleImage } from './components/SimpleImage';
+import { ImageFrame } from './components/ImageFrame';
+import { Bookmark } from './components/Bookmark';
 
 import { EditorJsViwerNativeProps } from './types';
 

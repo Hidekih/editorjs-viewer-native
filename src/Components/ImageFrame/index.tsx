@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import { Image, View, Text } from 'react-native';
 
 import { IMAGEHEIGHT } from '../../constants/sizes';
@@ -23,4 +22,4 @@ const ImageFrame = ({ data }: ImageFrameProps) => {
   );
 };
 
-export default memo(ImageFrame);
+export { ImageFrame };

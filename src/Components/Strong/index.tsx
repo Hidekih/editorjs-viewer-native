@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import { Text } from 'react-native';
 
 import { StrongProps } from './types';
@@ -17,4 +16,4 @@ const Strong = ({ fontFamily, children }: StrongProps) => {
   );
 };
 
-export default memo(Strong);
+export { Strong };

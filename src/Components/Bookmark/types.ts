@@ -16,4 +16,3 @@ export type BookmarkProps = {
   data: LinkData;
 } & TouchableOpacityProps;
 
-export default BookmarkProps;

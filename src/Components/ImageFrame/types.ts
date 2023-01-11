@@ -13,5 +13,3 @@ type ImageFrameData = {
 export type ImageFrameProps = {
   data: ImageFrameData;
 } & TextProps;
-
-export default ImageFrameProps;

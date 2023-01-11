@@ -1,5 +1,5 @@
 import { Text } from 'react-native';
-import { useMemo, memo } from 'react';
+import { useMemo } from 'react';
 
 import { styles } from './styles';
 import { HeaderProps } from './types';
@@ -20,4 +20,4 @@ const Header = ({ data, fontFamily, ...rest }: HeaderProps) => {
   );
 };
 
-export default memo(Header);
+export { Header };

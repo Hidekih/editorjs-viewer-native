@@ -1,5 +1,5 @@
 import { TouchableOpacity, View, Text, Image } from 'react-native';
-import { memo, useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import { styles } from './styles';
 import { BookmarkProps } from './types';
@@ -70,4 +70,4 @@ const Bookmark = ({ data: { link, meta } }: BookmarkProps) => {
   );
 };
 
-export default memo(Bookmark);
+export { Bookmark };

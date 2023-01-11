@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import { Text } from 'react-native';
 
 import { styles } from './styles';
@@ -18,4 +17,4 @@ const Italic = ({ children, fontFamily }: ItalicProps) => {
   );
 };
 
-export default memo(Italic);
+export { Italic };

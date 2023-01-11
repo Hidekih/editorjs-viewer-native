@@ -5,5 +5,3 @@ export type WebViewWithControlProps = {
   isOpenWebView: boolean;
   toggleWebViewIsOpen: () => void
 } & WebViewProps;
-
-export default WebViewWithControlProps;

@@ -1,4 +1,4 @@
-import { memo, useMemo } from 'react';
+import { useMemo } from 'react';
 import { SectionList } from 'react-native';
 
 import { ListProps } from './types';
@@ -26,4 +26,4 @@ const List = ({ data }: ListProps) => {
   );
 };
 
-export default memo(List);
+export { List };

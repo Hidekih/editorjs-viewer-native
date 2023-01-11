@@ -6,4 +6,3 @@ export type EditorJsViwerNativeProps = {
   data: EditorJsData;
 } & Pick<ViewProps, 'style'>;
 
-export default EditorJsViwerNativeProps;

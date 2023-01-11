@@ -1,4 +1,4 @@
-import { SafeAreaView, View, Text, TouchableOpacity, useWindowDimensions, ScrollView } from 'react-native';
+import { SafeAreaView, View, Text, TouchableOpacity, useWindowDimensions } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 import { styles } from './styles';

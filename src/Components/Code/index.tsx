@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import { Text } from 'react-native';
 
 import { styles } from './styles';
@@ -15,4 +14,4 @@ const Code = ({ children }: CodeProps) => {
   );
 };
 
-export default memo(Code);
+export { Code };

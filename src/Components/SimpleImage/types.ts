@@ -11,5 +11,3 @@ type SimpleImageData = {
 export type SimpleImageProps = {
   data: SimpleImageData;
 } & TextProps;
-
-export default SimpleImageProps;
