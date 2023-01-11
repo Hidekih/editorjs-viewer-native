@@ -20,14 +20,16 @@
     "@typescript-eslint/parser": "^5.48.0",
     "eslint": "^8.31.0",
     "eslint-plugin-react": "^7.31.11",
-    "react": "^18.2.0",
+    "react": "^18.1.0",
     "react-native": "^0.70.6",
+    "react-native-webview": "^11.26.0",
     "typescript": "^4.9.4"
   },
   "peerDependencies": {
     "@types/react": "*",
     "@types/react-native": "*",
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-webview": "*"
   }
 }
