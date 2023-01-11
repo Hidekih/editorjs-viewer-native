@@ -13,7 +13,7 @@ const FallbackBlock = ({ blockType }: FallbackBlockProps) => {
         accessible
         style={styles.alertText}
       >
-        The type &quot;{blockType}&quot; is yet not supported :c
+        Type &quot;{blockType}&quot; is yet not supported :c
       </Text>
     </View>
   );

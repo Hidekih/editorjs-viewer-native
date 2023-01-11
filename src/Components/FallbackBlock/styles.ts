@@ -5,10 +5,10 @@ export const styles = StyleSheet.create({
     display: 'flex',
     alignItem: 'center',
     justifyContent: 'center',
-    width: '100%',
     marginVertical: 6,
+    marginHorizontal: 12,
     padding: 12,
-    backgroundColor: '#F0E8E8',
+    backgroundColor: '#F4EDED',
     borderColor: '#E88285',
     borderStyle: 'solid',
     borderWidth: 1,
@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
   alertText: {
     fontSize: 16,
     color: '#E44045',
+    textAlign: 'center',
   }
 });
 
