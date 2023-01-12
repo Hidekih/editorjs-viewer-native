@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Hidekih/editorjs-viewer-native/1db973c995f9acff9f98cd68fcadd173930eeef4/public/editorJsNative.svg" />
+  <img src="https://raw.githubusercontent.com/Hidekih/editorjs-viewer-native/1db973c995f9acff9f98cd68fcadd173930eeef4/public/editorJsNative.svg" alt="EditorJsNativeViewer logo" />
 </p>
 
 # About
@@ -15,9 +15,8 @@ Alpha version coming soon!
 - [X] Simple Image
 - [X] Image
 - [X] Link embeds
+- [X] CreateEditorJsViewer function
 - [ ] Quote
-
-- [ ] CreateEditorJsViewer function
 
 **After alpha version**
 - [ ] Checklist
@@ -26,3 +25,9 @@ Alpha version coming soon!
 - [ ] Embeds
 
 More integrations in the future!
+
+# Usage
+Basic usage
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Hidekih/editorjs-viewer-native/1db973c995f9acff9f98cd68fcadd173930eeef4/public/editorJsNative.svg" alt="Simple usage example"/>
+</p>
