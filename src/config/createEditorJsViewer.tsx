@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 import { memo } from 'react';
-import { View  } from 'react-native';
+import { View } from 'react-native';
 
 import { HandleCustomToolComponent } from '../components/HandleCustomToolComponent';
 import { FallbackBlock } from '../components/FallbackBlock';
@@ -127,6 +127,11 @@ export const createEditorJsViewer = ({
                   }
                 />
               );
+            }
+
+            case 'customBlockType': {
+              // TODO
+              return <></>;
             }
 
             default: return <FallbackBlock key={block.id} blockType={block.type} />;
