@@ -29,5 +29,5 @@ More integrations in the future!
 # Usage
 Basic usage
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Hidekih/editorjs-viewer-native/1db973c995f9acff9f98cd68fcadd173930eeef4/public/editorJsNative.svg" alt="Simple usage example"/>
+  <img src="https://raw.githubusercontent.com/Hidekih/editorjs-viewer-native/main/public/usage.png" alt="Simple usage example"/>
 </p>
