@@ -32,7 +32,7 @@ const Quote = ({ data, quoteFontFamily, captionFontFamily }: QuoteProps) => {
             fontFamily: captionFontFamily
           }}
         >
-          {data.caption}
+          -{data.caption}
         </Text>
       )}
     </View>

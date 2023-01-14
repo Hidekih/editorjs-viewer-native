@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
-const IMAGEHEIGHT = 98;
+// Size of dataContainer padding + childs height
+const IMAGEHEIGHT = 100;
 
 export const styles = StyleSheet.create({
   wrapper: {
@@ -24,15 +25,18 @@ export const styles = StyleSheet.create({
   title: {
     fontWeight: '600',
     fontSize: 16,
+    height: 18
   },
   description: {
     color: '#7D7C78',
-    marginTop: 2,
-    fontSize: 14
+    marginTop: 4,
+    fontSize: 14,
+    height: 32
   },
   link: {
     marginTop: 6,
-    fontSize: 14
+    fontSize: 14,
+    height: 16
   },
   imageContainer: {
     width: IMAGEHEIGHT,
