@@ -8,6 +8,7 @@ import { List } from './components/List';
 import { SimpleImage } from './components/SimpleImage';
 import { ImageFrame } from './components/ImageFrame';
 import { Bookmark } from './components/Bookmark';
+import { Quote } from './components/Quote';
 
 import { EditorJsViwerNativeProps } from './types';
 
@@ -44,6 +45,9 @@ const EditorJsViewerNative = memo(({ data, ...rest }: EditorJsViwerNativeProps) 
             <SimpleImage key={block.id} data={block.data}/>
           );
 
+          case 'quote': return (
+            <Quote key={block.id} data={block.data}/>
+          );
 
           default: return <FallbackBlock key={block.id} blockType={block.type}/>;
         }

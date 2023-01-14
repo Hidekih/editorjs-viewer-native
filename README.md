@@ -16,7 +16,7 @@ Alpha version coming soon!
 - [X] Image
 - [X] Link embeds
 - [X] CreateEditorJsViewer function
-- [ ] Quote
+- [X] Quote
 
 **After alpha version**
 - [ ] Checklist
