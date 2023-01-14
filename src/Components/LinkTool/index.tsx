@@ -1,25 +1,20 @@
-import { TouchableOpacity, View, Text, Image } from 'react-native';
-import { useCallback, useState } from 'react';
+import { TouchableOpacity, Linking, View, Text, Image, Alert } from 'react-native';
+import { useCallback } from 'react';
 
 import { styles } from './styles';
 import { LinkToolProps } from './types';
-import { WebViewWithControl } from '../WebViewWithControl';
 
 const LinkTool = ({ data: { link, meta } }: LinkToolProps) => {
-  const [ isWebViewOpen, setIsWebViewOpen ] = useState(false);
-
-  const toggleWebViewIsOpen = useCallback(() => {
-    setIsWebViewOpen(prevState => !prevState);
+  const handleOpenLink = useCallback(async (link: string) => {
+    try {
+      await Linking.openURL(link);
+    } catch {
+      Alert.alert(`Don't know how to open this URL: ${link}`);
+    }
   }, []);
 
   return (
     <>
-      <WebViewWithControl
-        uri={link}
-        isOpenWebView={isWebViewOpen}
-        toggleWebViewIsOpen={toggleWebViewIsOpen}
-      />
-
       <TouchableOpacity
         accessible
         accessibilityRole='link'
@@ -27,7 +22,7 @@ const LinkTool = ({ data: { link, meta } }: LinkToolProps) => {
         accessibilityHint="Clique para abrir o link"
         activeOpacity={0.2}
         style={styles.wrapper}
-        onPress={() => toggleWebViewIsOpen()}
+        onPress={() => handleOpenLink(link)}
       >
         <View style={styles.container}>
           <View style={styles.dataContainer}>
@@ -42,13 +37,21 @@ const LinkTool = ({ data: { link, meta } }: LinkToolProps) => {
             )}
 
             { meta.description && (
-              <Text style={styles.description} numberOfLines={2} ellipsizeMode='tail'>
+              <Text
+                style={styles.description}
+                numberOfLines={2}
+                ellipsizeMode='tail'
+              >
                 {meta.description}
               </Text>
             )}
 
             { link && (
-              <Text style={styles.link} numberOfLines={1} ellipsizeMode='tail'>
+              <Text
+                style={styles.link}
+                numberOfLines={1}
+                ellipsizeMode='tail'
+              >
                 {link}
               </Text>
             )}
