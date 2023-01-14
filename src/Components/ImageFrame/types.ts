@@ -10,4 +10,5 @@ export type ImageFrameProps = {
     withBackground?: boolean;
     stretched?: boolean;
   };
+  captionFontFamily?: string;
 } & TextProps;

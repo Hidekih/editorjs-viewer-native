@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
     height: IMAGEHEIGHT,
     width: '100%',
     resizeMode: 'contain',
+    backgroundColor: '#f2f2f2',
   },
   caption: {
     width: '100%',
