@@ -1,7 +1,8 @@
-import { ListData } from '../types';
+import { ListProps } from '../types';
 
 export type ItemListProps = {
   value: string;
   index: number;
-  listStyle: ListData['style'];
+  listStyle: ListProps['data']['style'];
+  fontFamily?: string
 }

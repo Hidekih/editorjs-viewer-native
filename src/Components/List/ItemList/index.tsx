@@ -5,7 +5,7 @@ import { useParseHtmlTags } from '../../../hooks/useParseHtmlTags';
 import { styles } from './styles';
 import { ItemListProps } from './types';
 
-export const ItemList = ({ value, listStyle, index }: ItemListProps) => {
+export const ItemList = ({ value, listStyle, index, fontFamily }: ItemListProps) => {
   const { parseHtmlTag, defaultListTags } = useParseHtmlTags();
 
   const parsedText = useMemo(() => parseHtmlTag(defaultListTags, value), []);
@@ -23,7 +23,10 @@ export const ItemList = ({ value, listStyle, index }: ItemListProps) => {
         accessible
         accessibilityRole="text"
         allowFontScaling={true}
-        style={styles.listItem}
+        style={{
+          ...styles.listItem,
+          fontFamily
+        }}
       >
         {parsedText}
       </Text>

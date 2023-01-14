@@ -5,7 +5,7 @@ import { ListProps } from './types';
 import { styles } from './styles';
 import { ItemList } from './ItemList';
 
-const List = ({ data }: ListProps) => {
+const List = ({ data, fontFamily }: ListProps) => {
   const sections = useMemo(() => {
     return [{ data: data.items }];
   }, []);
@@ -20,6 +20,7 @@ const List = ({ data }: ListProps) => {
           value={item}
           index={index}
           listStyle={data.style}
+          fontFamily={fontFamily}
         />
       ) }
     />

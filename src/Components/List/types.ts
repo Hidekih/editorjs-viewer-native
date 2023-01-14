@@ -5,4 +5,5 @@ export type ListProps = {
     items: Array<string>;
     style: 'ordered' | 'unordered';
   };
+  fontFamily?: string
 } & TextProps;
