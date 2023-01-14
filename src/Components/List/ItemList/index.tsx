@@ -3,9 +3,9 @@ import { Text, View } from 'react-native';
 
 import { useParseHtmlTags } from '../../../hooks/useParseHtmlTags';
 import { styles } from './styles';
-import { ItemListProps } from './types';
+import { IItemIListProps } from './types';
 
-export const ItemList = ({ value, listStyle, index, fontFamily }: ItemListProps) => {
+export const ItemList = ({ value, listStyle, index, fontFamily }: IItemIListProps) => {
   const { parseHtmlTag, defaultListTags } = useParseHtmlTags();
 
   const parsedText = useMemo(() => parseHtmlTag(defaultListTags, value), []);

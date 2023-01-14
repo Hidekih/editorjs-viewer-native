@@ -1,10 +1,10 @@
-import { HeaderProps } from '../components/Header/types';
-import { ImageFrameProps } from '../components/ImageFrame/types';
-import { LinkToolProps } from '../components/LinkTool/types';
-import { ListProps } from '../components/List/types';
-import { ParagraphProps } from '../components/Paragraph/types';
-import { SimpleImageProps } from '../components/SimpleImage/types';
-import { QuoteProps } from '../components/Quote/types';
+import { IHeaderProps } from '../components/Header/types';
+import { IImageFrameProps } from '../components/ImageFrame/types';
+import { ILinkToolProps } from '../components/LinkTool/types';
+import { IListProps } from '../components/List/types';
+import { IParagraphProps } from '../components/Paragraph/types';
+import { ISimpleImageProps } from '../components/SimpleImage/types';
+import { IQuoteProps } from '../components/Quote/types';
 
 export interface ICreateEditorJsViewerProps {
   toolsParser?: IToolsParser;
@@ -17,9 +17,9 @@ export interface ICreateEditorJsViewerProps {
 export interface IToolsParser {
   header?: {
     /**
-     * A component with type {@link HeaderProps} or any for your custom header tool
+     * A component with type {@link IHeaderProps} or any for your custom header tool
     */
-    CustomComponent?: (props: HeaderProps | any ) => JSX.Element;
+    CustomComponent?: (props: IHeaderProps | any ) => JSX.Element;
     /**
      * This prop will be ignored if you use a CustomComponent
     */
@@ -27,9 +27,9 @@ export interface IToolsParser {
   }
   image?: {
     /**
-     * A component with type {@link ImageFrameProps} or any for your custom image tool
+     * A component with type {@link IImageFrameProps} or any for your custom image tool
     */
-    CustomComponent: (props: ImageFrameProps | any ) => JSX.Element;
+    CustomComponent: (props: IImageFrameProps | any ) => JSX.Element;
     /**
      * This prop will be ignored if you use a CustomComponent
     */
@@ -37,18 +37,18 @@ export interface IToolsParser {
   }
   linkTool?: {
     /**
-     * A component with type {@link LinkToolProps} or any for your custom linkTool tool
+     * A component with type {@link ILinkToolProps} or any for your custom linkTool tool
     */
-    CustomComponent?: (props: LinkToolProps | any ) => JSX.Element;
+    CustomComponent?: (props: ILinkToolProps | any ) => JSX.Element;
   }
   /**
    * Is not recommended to replace this component because he need a html parser to RN JSX
   */
   list?: {
     /**
-     * A component with type {@link ListProps} or any for your custom list tool
+     * A component with type {@link IListProps} or any for your custom list tool
     */
-    CustomComponent?: (prop: ListProps | any ) => JSX.Element;
+    CustomComponent?: (prop: IListProps | any ) => JSX.Element;
     /**
      * This prop will be ignored if you use a CustomComponent
     */
@@ -59,9 +59,9 @@ export interface IToolsParser {
   */
   paragraph?: {
     /**
-     * A component with type {@link ParagraphProps} or any for your custom paragraph tool
+     * A component with type {@link IParagraphProps} or any for your custom paragraph tool
     */
-    CustomComponent?: (props: ParagraphProps | any ) => JSX.Element;
+    CustomComponent?: (props: IParagraphProps | any ) => JSX.Element;
      /**
      * This prop will be ignored if you use a CustomComponent
     */
@@ -69,9 +69,9 @@ export interface IToolsParser {
   }
   simpleImage?: {
     /**
-     * A component with type {@link SimpleImageProps } or any for your custom simpleImage tool
+     * A component with type {@link ISimpleImageProps } or any for your custom simpleImage tool
     */
-    CustomComponent?: (props: SimpleImageProps | any ) => JSX.Element;
+    CustomComponent?: (props: ISimpleImageProps | any ) => JSX.Element;
     /**
      * This prop will be ignored if you use a CustomComponent
     */
@@ -79,9 +79,9 @@ export interface IToolsParser {
   }
   quote?: {
     /**
-     * A component with type {@link QuoteProps } or any for your custom simpleImage tool
+     * A component with type {@link IQuoteProps } or any for your custom simpleImage tool
     */
-    CustomComponent?: (props: QuoteProps | any ) => JSX.Element;
+    CustomComponent?: (props: IQuoteProps | any ) => JSX.Element;
     /**
      * This prop will be ignored if you use a CustomComponent
     */

@@ -1,8 +1,8 @@
-import { ListProps } from '../types';
+import { IListProps } from '../types';
 
-export type ItemListProps = {
+export type IItemIListProps = {
   value: string;
   index: number;
-  listStyle: ListProps['data']['style'];
+  listStyle: IListProps['data']['style'];
   fontFamily?: string
 }

@@ -1,5 +1,5 @@
 import { TextProps } from 'react-native';
 
-export type ItalicProps = {
+export type IItalicProps = {
   fontFamily?: string;
 } & TextProps;

@@ -1,0 +1,1 @@
+export { createEditorJsViewer } from './createEditorJsViewer';

@@ -1,6 +1,6 @@
 import { TextProps } from 'react-native';
 
-export type ImageFrameProps = {
+export type IImageFrameProps = {
   data: {
     file: {
       url : string

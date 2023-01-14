@@ -1,16 +1,20 @@
 import { Image, View, Text } from 'react-native';
 
 import { IMAGEHEIGHT } from '../../constants/sizes';
-import { SimpleImageProps } from './types';
+import { ISimpleImageProps } from './types';
 import { styles } from './styles';
 
-const SimpleImage = ({ data, captionFontFamily }: SimpleImageProps) => {
+const SimpleImage = ({ data, captionFontFamily, style, ...rest }: ISimpleImageProps) => {
   return (
     <View
-      style={{
-        ...styles.container,
-        height: data.caption ? IMAGEHEIGHT + 24 : IMAGEHEIGHT,
-      }}
+      style={[
+        style,
+        {
+          ...styles.container,
+          height: data.caption ? IMAGEHEIGHT + 20 : IMAGEHEIGHT,
+        }
+      ]}
+      {...rest}
     >
       <Image
         accessible

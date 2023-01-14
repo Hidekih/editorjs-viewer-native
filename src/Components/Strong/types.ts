@@ -1,5 +1,5 @@
 import { TextProps } from 'react-native';
 
-export type StrongProps = {
+export type IStrongProps = {
   fontFamily?: string;
 } & TextProps;

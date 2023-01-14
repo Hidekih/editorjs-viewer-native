@@ -1,9 +1,9 @@
 import { Text } from 'react-native';
 
 import { styles } from './styles';
-import { MarkProps } from './types';
+import { IMarkProps } from './types';
 
-const Mark = ({ children }: MarkProps) => {
+const Mark = ({ children }: IMarkProps) => {
   return (
     <Text
       allowFontScaling={true}

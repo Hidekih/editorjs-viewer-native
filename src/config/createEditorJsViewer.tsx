@@ -11,7 +11,7 @@ import { ImageFrame } from '../components/ImageFrame';
 import { LinkTool } from '../components/LinkTool';
 import { Quote } from '../components/Quote';
 
-import { EditorJsViwerNativeProps } from '../types';
+import { IEditorJsViwerNativeProps } from '../types/editorJsViwerNative';
 import { ICreateEditorJsViewerProps } from '../types/createEditorJsViewerProps';
 
 export const createEditorJsViewer = ({
@@ -28,12 +28,22 @@ export const createEditorJsViewer = ({
     quote,
   } = toolsParser ?? {};
 
-  return memo(({ data, ...rest }: EditorJsViwerNativeProps) => (
+  return memo(({ data, ...rest }: IEditorJsViwerNativeProps) => (
     <View style={{ width: '100%' }} {...rest}>
-      {data.blocks.map((block) => {
+      {data.blocks.map((block, index) => {
+        // SimpleImage type can be named as `image`
         if (block.type == 'image' && block.data?.file == null) {
           block.type = 'simpleImage';
         }
+
+        const isFirstBlock = index == 0;
+        const isLastBlock = index == data.blocks.length - 1;
+
+        // Removing default margin top/bottom from first/last element
+        const fixMarginIfIsFirstOrLast = {
+          marginTop: isFirstBlock ? 0 : undefined,
+          marginBottom: isLastBlock ? 0 : undefined
+        };
 
         switch (block.type) {
           case 'header': {
@@ -47,6 +57,7 @@ export const createEditorJsViewer = ({
                   <Header
                     key={block.id}
                     data={block.data}
+                    style={fixMarginIfIsFirstOrLast}
                     fontFamily={header?.fontFamily}
                   />
                 )}
@@ -66,6 +77,7 @@ export const createEditorJsViewer = ({
                     key={block.id}
                     data={block.data}
                     captionFontFamily={image?.captionFontFamily}
+                    style={fixMarginIfIsFirstOrLast}
                   />
                 )}
               </>
@@ -80,7 +92,11 @@ export const createEditorJsViewer = ({
                 {CustomLinkTool ? (
                   <CustomLinkTool key={block.id} data={block.data} />
                 ) : (
-                  <LinkTool key={block.id} data={block.data} />
+                  <LinkTool
+                    key={block.id}
+                    data={block.data}
+                    style={fixMarginIfIsFirstOrLast}
+                  />
                 )}
               </>
             );
@@ -98,6 +114,7 @@ export const createEditorJsViewer = ({
                     key={block.id}
                     data={block.data}
                     fontFamily={list?.fontFamily}
+                    style={fixMarginIfIsFirstOrLast}
                   />
                 )}
               </>
@@ -116,6 +133,7 @@ export const createEditorJsViewer = ({
                     key={block.id}
                     data={block.data}
                     fontFamily={paragraph?.fontFamily}
+                    style={fixMarginIfIsFirstOrLast}
                   />
                 )}
               </>
@@ -134,6 +152,7 @@ export const createEditorJsViewer = ({
                     key={block.id}
                     data={block.data}
                     captionFontFamily={simpleImage?.captionFontFamily}
+                    style={fixMarginIfIsFirstOrLast}
                   />
                 )}
               </>
@@ -153,6 +172,7 @@ export const createEditorJsViewer = ({
                     data={block.data}
                     quoteFontFamily={quote?.quoteFontFamily}
                     captionFontFamily={quote?.captionFontFamily}
+                    style={fixMarginIfIsFirstOrLast}
                   />
                 )}
               </>

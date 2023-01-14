@@ -1,16 +1,20 @@
 import { Image, View, Text } from 'react-native';
 
 import { IMAGEHEIGHT } from '../../constants/sizes';
-import { ImageFrameProps } from './types';
+import { IImageFrameProps } from './types';
 import { styles } from './styles';
 
-const ImageFrame = ({ data, captionFontFamily }: ImageFrameProps) => {
+const ImageFrame = ({ data, captionFontFamily, style, ...rest }: IImageFrameProps) => {
   return (
     <View
-      style={{
-        ...styles.container,
-        height: data.caption ? IMAGEHEIGHT + 24 : IMAGEHEIGHT,
-      }}
+      style={[
+        style,
+        {
+          ...styles.container,
+          height: data.caption ? IMAGEHEIGHT + 24 : IMAGEHEIGHT,
+        }
+      ]}
+      {...rest}
     >
       <Image
         accessible

@@ -1,9 +1,9 @@
-import { TextProps } from 'react-native';
+import { ViewProps } from 'react-native';
 
-export type ListProps = {
+export type IListProps = {
   data: {
     items: Array<string>;
     style: 'ordered' | 'unordered';
   };
   fontFamily?: string
-} & TextProps;
+} & Pick<ViewProps, 'style'>;

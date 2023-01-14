@@ -1,6 +1,6 @@
 // Interfaces from EditorJs v2.26.4
 // Copy of OutputData
-export interface EditorJsData {
+export interface IEditorJsData {
   /**
    * Editor's version
    */

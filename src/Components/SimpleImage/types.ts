@@ -1,6 +1,6 @@
 import { TextProps } from 'react-native';
 
-export type SimpleImageProps = {
+export type ISimpleImageProps = {
   data: {
     url: string;
     caption?: string;

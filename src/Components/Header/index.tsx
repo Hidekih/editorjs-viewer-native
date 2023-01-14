@@ -2,18 +2,21 @@ import { Text } from 'react-native';
 import { useMemo } from 'react';
 
 import { styles } from './styles';
-import { HeaderProps } from './types';
+import { IHeaderProps } from './types';
 
-const Header = ({ data, fontFamily, ...rest }: HeaderProps) => {
+const Header = ({ data, fontFamily, style, ...rest }: IHeaderProps) => {
   const stylesByHeadingLevel = useMemo(() => styles[`h${data.level}`], []);
 
   return (
     <Text
-      {...rest}
       accessible={true}
       accessibilityRole="header"
       allowFontScaling={true}
-      style={{ ...styles.global, ...stylesByHeadingLevel, fontFamily }}
+      style={[
+        style,
+        { ...styles.global, ...stylesByHeadingLevel, fontFamily }
+      ]}
+      {...rest}
     >
       {data.text}
     </Text>

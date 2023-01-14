@@ -1,9 +1,9 @@
 import { Text } from 'react-native';
 
 import { styles } from './styles';
-import { ItalicProps } from './types';
+import { IItalicProps } from './types';
 
-const Italic = ({ children, fontFamily }: ItalicProps) => {
+const Italic = ({ children, fontFamily }: IItalicProps) => {
   return (
     <Text
       allowFontScaling={true}

@@ -1,6 +1,6 @@
 import { TextProps } from 'react-native';
 
-export type QuoteProps = {
+export type IQuoteProps = {
   data: {
     text: string,
     caption?: string,

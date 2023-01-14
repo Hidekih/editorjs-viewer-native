@@ -1,9 +1,9 @@
 import { Text } from 'react-native';
 
 import { styles } from './styles';
-import { CodeProps } from './types';
+import { ICodeProps } from './types';
 
-const Code = ({ children }: CodeProps) => {
+const Code = ({ children }: ICodeProps) => {
   return (
     <Text
       allowFontScaling={true}

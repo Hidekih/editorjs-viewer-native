@@ -2,9 +2,9 @@ import { TouchableOpacity, Linking, View, Text, Image, Alert } from 'react-nativ
 import { useCallback } from 'react';
 
 import { styles } from './styles';
-import { LinkToolProps } from './types';
+import { ILinkToolProps } from './types';
 
-const LinkTool = ({ data: { link, meta } }: LinkToolProps) => {
+const LinkTool = ({ data: { link, meta }, style, ...rest }: ILinkToolProps) => {
   const handleOpenLink = useCallback(async (link: string) => {
     try {
       await Linking.openURL(link);
@@ -21,8 +21,9 @@ const LinkTool = ({ data: { link, meta } }: LinkToolProps) => {
         accessibilityLabel="Bookmark"
         accessibilityHint="Clique para abrir o link"
         activeOpacity={0.2}
-        style={styles.wrapper}
+        style={[ style, styles.wrapper ]}
         onPress={() => handleOpenLink(link)}
+        {...rest}
       >
         <View style={styles.container}>
           <View style={styles.dataContainer}>

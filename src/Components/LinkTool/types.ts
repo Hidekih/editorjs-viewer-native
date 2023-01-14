@@ -1,6 +1,6 @@
 import { TouchableOpacityProps } from 'react-native';
 
-export type LinkToolProps = {
+export type ILinkToolProps = {
   data: {
     link: string;
     meta: {

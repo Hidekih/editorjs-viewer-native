@@ -1,8 +1,8 @@
 import { Text } from 'react-native';
 
-import { StrongProps } from './types';
+import { IStrongProps } from './types';
 
-const Strong = ({ fontFamily, children }: StrongProps) => {
+const Strong = ({ fontFamily, children }: IStrongProps) => {
   return (
     <Text
       allowFontScaling={true}

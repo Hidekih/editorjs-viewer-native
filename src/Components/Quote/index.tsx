@@ -1,11 +1,11 @@
 import { View, Text } from 'react-native';
 
 import { useParseHtmlTags } from '../../hooks/useParseHtmlTags';
-import { QuoteProps } from './types';
+import { IQuoteProps } from './types';
 import { styles } from './styles';
 import { useMemo } from 'react';
 
-const Quote = ({ data, quoteFontFamily, captionFontFamily }: QuoteProps) => {
+const Quote = ({ data, quoteFontFamily, captionFontFamily, style, ...rest }: IQuoteProps) => {
   const { parseHtmlTag, defaultListTags } = useParseHtmlTags();
 
   const parsedText = useMemo(() => parseHtmlTag(defaultListTags, data.text), []);
@@ -15,11 +15,15 @@ const Quote = ({ data, quoteFontFamily, captionFontFamily }: QuoteProps) => {
       <Text
         accessibilityRole="text"
         allowFontScaling={true}
-        style={{
-          ...styles.quoteText,
-          textAlign: data.alignment ?? 'left',
-          fontFamily: quoteFontFamily,
-        }}
+        style={[
+          style,
+          {
+            ...styles.quoteText,
+            textAlign: data.alignment ?? 'left',
+            fontFamily: quoteFontFamily,
+          }
+        ]}
+        {...rest}
       >
         {parsedText}
       </Text>
