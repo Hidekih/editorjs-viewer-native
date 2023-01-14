@@ -13,16 +13,16 @@ const ImageFrame = ({ data, captionFontFamily }: ImageFrameProps) => {
       }}
     >
       <Image
-        accessibilityHint={data.caption}
+        accessible
+        accessibilityHint={`${data.caption} image`}
         accessibilityRole="image"
-        source={{
-          uri: data.file.url,
-        }}
+        source={{ uri: data.file.url }}
         style={styles.image}
       />
 
       {data.caption && (
         <Text
+          aria-hidden
           style={{ ...styles.caption, fontFamily: captionFontFamily }}
         >
           {data.caption}
