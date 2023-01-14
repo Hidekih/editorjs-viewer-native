@@ -7,7 +7,7 @@ import { Header } from './components/Header';
 import { List } from './components/List';
 import { SimpleImage } from './components/SimpleImage';
 import { ImageFrame } from './components/ImageFrame';
-import { Bookmark } from './components/Bookmark';
+import { LinkTool } from './components/LinkTool';
 import { Quote } from './components/Quote';
 
 import { EditorJsViwerNativeProps } from './types';
@@ -30,7 +30,7 @@ const EditorJsViewerNative = memo(({ data, ...rest }: EditorJsViwerNativeProps) 
           );
 
           case 'linkTool': return (
-            <Bookmark key={block.id} data={block.data}/>
+            <LinkTool key={block.id} data={block.data}/>
           );
 
           case 'list': return (

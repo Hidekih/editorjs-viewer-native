@@ -2,10 +2,10 @@ import { TouchableOpacity, View, Text, Image } from 'react-native';
 import { useCallback, useState } from 'react';
 
 import { styles } from './styles';
-import { BookmarkProps } from './types';
+import { LinkToolProps } from './types';
 import { WebViewWithControl } from '../WebViewWithControl';
 
-const Bookmark = ({ data: { link, meta } }: BookmarkProps) => {
+const LinkTool = ({ data: { link, meta } }: LinkToolProps) => {
   const [ isWebViewOpen, setIsWebViewOpen ] = useState(false);
 
   const toggleWebViewIsOpen = useCallback(() => {
@@ -70,4 +70,4 @@ const Bookmark = ({ data: { link, meta } }: BookmarkProps) => {
   );
 };
 
-export { Bookmark };
+export { LinkTool };

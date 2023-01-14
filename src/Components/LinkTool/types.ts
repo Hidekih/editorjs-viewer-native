@@ -1,6 +1,6 @@
 import { TouchableOpacityProps } from 'react-native';
 
-export type BookmarkProps = {
+export type LinkToolProps = {
   data: {
     link: string;
     meta: {
