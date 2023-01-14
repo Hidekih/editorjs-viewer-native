@@ -5,7 +5,7 @@ import { useParseHtmlTags } from '../../hooks/useParseHtmlTags';
 import { ParagraphProps } from './types';
 import { styles } from './styles';
 
-const Paragraph = ({ data }: ParagraphProps) => {
+const Paragraph = ({ data, fontFamily }: ParagraphProps) => {
   const { parseHtmlTag, defaultListTags } = useParseHtmlTags();
 
   const parsedText = useMemo(() => parseHtmlTag(defaultListTags, data.text), []);
@@ -15,7 +15,7 @@ const Paragraph = ({ data }: ParagraphProps) => {
       accessible
       accessibilityRole="text"
       allowFontScaling={true}
-      style={styles.paragraph}
+      style={{ ...styles.paragraph, fontFamily }}
     >
       {parsedText}
     </Text>
