@@ -16,7 +16,7 @@ import { ICreateEditorJsViewerProps } from '../types/createEditorJsViewerProps';
 
 export const createEditorJsViewer = ({
   toolsParser,
-  unknownBlockFallback = true
+  unknownBlockFallback = false
 }: ICreateEditorJsViewerProps) => {
   const {
     header,
@@ -44,7 +44,11 @@ export const createEditorJsViewer = ({
                 {CustomHeader ? (
                   <CustomHeader key={block.id} data={block.data} />
                 ) : (
-                  <Header key={block.id} data={block.data} />
+                  <Header
+                    key={block.id}
+                    data={block.data}
+                    fontFamily={header?.fontFamily}
+                  />
                 )}
               </>
             );
@@ -58,7 +62,11 @@ export const createEditorJsViewer = ({
                 {CustomImage ? (
                   <CustomImage key={block.id} data={block.data} />
                 ) : (
-                  <ImageFrame key={block.id} data={block.data} />
+                  <ImageFrame
+                    key={block.id}
+                    data={block.data}
+                    captionFontFamily={image?.captionFontFamily}
+                  />
                 )}
               </>
             );
@@ -86,7 +94,11 @@ export const createEditorJsViewer = ({
                 {CustomList ? (
                   <CustomList key={block.id} data={block.data} />
                 ) : (
-                  <List key={block.id} data={block.data} />
+                  <List
+                    key={block.id}
+                    data={block.data}
+                    fontFamily={list?.fontFamily}
+                  />
                 )}
               </>
             );
@@ -100,7 +112,11 @@ export const createEditorJsViewer = ({
                 {CustomParagraph ? (
                   <CustomParagraph key={block.id} data={block.data} />
                 ) : (
-                  <Paragraph key={block.id} data={block.data} />
+                  <Paragraph
+                    key={block.id}
+                    data={block.data}
+                    fontFamily={paragraph?.fontFamily}
+                  />
                 )}
               </>
             );
@@ -114,7 +130,11 @@ export const createEditorJsViewer = ({
                 {CustomSimpleImage ? (
                   <CustomSimpleImage key={block.id} data={block.data} />
                 ) : (
-                  <SimpleImage key={block.id} data={block.data} />
+                  <SimpleImage
+                    key={block.id}
+                    data={block.data}
+                    captionFontFamily={simpleImage?.captionFontFamily}
+                  />
                 )}
               </>
             );
@@ -128,7 +148,12 @@ export const createEditorJsViewer = ({
                 {CustomQuote ? (
                   <CustomQuote key={block.id} data={block.data} />
                 ) : (
-                  <Quote key={block.id} data={block.data} />
+                  <Quote
+                    key={block.id}
+                    data={block.data}
+                    quoteFontFamily={quote?.quoteFontFamily}
+                    captionFontFamily={quote?.captionFontFamily}
+                  />
                 )}
               </>
             );
