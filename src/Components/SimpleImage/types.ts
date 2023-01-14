@@ -8,4 +8,5 @@ export type SimpleImageProps = {
     withBackground?: boolean;
     stretched?: boolean;
   };
+  captionFontFamily?: string;
 } & TextProps;
