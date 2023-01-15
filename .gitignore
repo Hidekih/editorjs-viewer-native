@@ -60,6 +60,7 @@ buck-out/
 
 # Packages
 lib/
+dist
 
 # Personal files
 #
