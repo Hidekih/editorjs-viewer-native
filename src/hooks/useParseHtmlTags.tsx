@@ -2,17 +2,17 @@ import { createElement, ReactNode, Fragment, useMemo, useCallback } from 'react'
 import { Text } from 'react-native';
 import { decode } from 'html-entities';
 
-import { Strong } from '../components/Strong';
 import { Code } from '../components/Code';
 import { Italic } from '../components/Italic';
 import { Mark } from '../components/Mark';
+import { Bold } from '../Components/Bold';
 
 export const useParseHtmlTags = () => {
   const defaultListTags = useMemo(() => [
-    'b',
     'code',
     'i',
     'mark',
+    'b',
   ], []);
 
   const getTagName = useCallback((value: string) => {
@@ -24,7 +24,7 @@ export const useParseHtmlTags = () => {
 
   const getComponentByName = useCallback((name: string) => {
     switch (name) {
-      case 'b': return Strong;
+      case 'b': return Bold;
       case 'code': return Code;
       case 'i': return Italic;
       case 'mark': return Mark;

@@ -10,7 +10,7 @@ import {
   Paragraph,
   Quote,
   SimpleImage,
-  Strong,
+  Bold
 } from './components';
 
 import type {
@@ -25,7 +25,7 @@ import type {
   IParagraphProps,
   IQuoteProps,
   ISimpleImageProps,
-  IStrongProps,
+  IBoldProps,
 } from './components';
 
 import { createEditorJsViewer } from './config';
@@ -43,7 +43,7 @@ export {
   Paragraph,
   Quote,
   SimpleImage,
-  Strong,
+  Bold,
   createEditorJsViewer,
 };
 
@@ -62,6 +62,6 @@ export type {
   IParagraphProps,
   IQuoteProps,
   ISimpleImageProps,
-  IStrongProps,
+  IBoldProps,
   IToolsParser,
 };

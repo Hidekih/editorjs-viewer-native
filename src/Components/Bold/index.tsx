@@ -1,8 +1,8 @@
 import { Text } from 'react-native';
 
-import { IStrongProps } from './types';
+import { IBoldProps } from './types';
 
-const Strong = ({ fontFamily, children }: IStrongProps) => {
+const Bold = ({ fontFamily, children }: IBoldProps) => {
   return (
     <Text
       allowFontScaling={true}
@@ -16,4 +16,4 @@ const Strong = ({ fontFamily, children }: IStrongProps) => {
   );
 };
 
-export { Strong };
+export { Bold };

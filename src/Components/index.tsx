@@ -20,5 +20,5 @@ export { Quote } from './Quote';
 export type { IQuoteProps } from './Quote/types';
 export { SimpleImage } from './SimpleImage';
 export type { ISimpleImageProps } from './SimpleImage/types';
-export { Strong } from './Strong';
-export type { IStrongProps } from './Strong/types';
+export { Bold } from './Bold';
+export type { IBoldProps } from './Bold/types';
