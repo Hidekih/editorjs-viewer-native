@@ -29,16 +29,63 @@ yarn add editorjs-viewer-native
 - [`Quote`](https://github.com/editor-js/quote)
 
 ## Usage
-Basic usage
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Hidekih/editorjs-viewer-native/main/public/basic-usage.png" alt="Simple usage example"/>
-</p>
+Create a component using function `createEditorJsViewer`.
+
+```tsx
+import { ScrollView } from 'react-native';
+import { createEditorJsViewer } from "editorjs-viewer-native";
+
+import dataFromEditorJs from "./data.json";
+
+const EditorJsViewerNative = createEditorJsViewer();
+
+export default function App() {
+  return (
+    <ScrollView>
+      <EditorJsViewerNative data={dataFromEditorJs} />
+    </ScrollView>
+  );
+}
+```
 
 ## Custom component
-Creating a custom component
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Hidekih/editorjs-viewer-native/main/public/custom-component.png" alt="Using custom component example"/>
-</p>
+If you want to use your custom block for render a data, you can define a customComponent in `createEditorJsViewer` config object.
+```tsx
+import { ScrollView, Text } from 'react-native';
+import { createEditorJsViewer, IHeaderProps } from "editorjs-viewer-native";
+
+import dataFromEditorJs from "./data.json";
+
+const MyHeader = ({ data }: IHeaderProps) => {
+  return <Text>{data.text}</Text>
+}
+
+const EditorJsViewerNative = createEditorJsViewer({
+  toolsParser: {
+    header: {
+      CustomComponent: MyHeader
+    }
+  }
+})
+
+export default function App() {
+  return (
+    <ScrollView>
+      <EditorJsViewerNative data={dataFromEditorJs} />
+    </ScrollView>
+  );
+}
+```
+Now the component `MyHeader` will render all data of type **header**.
+
+## Fallback for unsupported block types
+If you want to show a message for unsupported blocks (good for test, bad for production) set `unknownBlockFallback` as true inside `createEditorJsViewer` config object.
+
+```tsx
+const EditorJsViewerNative = createEditorJsViewer({
+  unknownBlockFallback: true
+})
+```
 
 ## Update plans
 Support for:
@@ -48,5 +95,4 @@ Support for:
 - [`Table`](https://github.com/editor-js/table)
 - [`Raw HTML`](https://github.com/editor-js/raw)
 - [`Personality`](https://github.com/editor-js/personality)
-- Support for custom blocks
-- ?
+- Custom blocks
