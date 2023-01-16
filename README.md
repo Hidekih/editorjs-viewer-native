@@ -27,6 +27,7 @@ yarn add editorjs-viewer-native
 - [`Marker`](https://github.com/editor-js/marker)
 - [`Simple Image`](https://github.com/editor-js/simple-image)
 - [`Quote`](https://github.com/editor-js/quote)
+- [`Delimiter`](https://github.com/editor-js/delimiter)
 
 ## Usage
 Create a component using function `createEditorJsViewer`.
@@ -89,7 +90,6 @@ const EditorJsViewerNative = createEditorJsViewer({
 
 ## Update plans
 Support for:
-- [`Delimiter`](https://github.com/editor-js/delimiter)
 - [`Underline`](https://github.com/editor-js/underline)
 - [`Checklist`](https://github.com/editor-js/checklist)
 - [`Table`](https://github.com/editor-js/table)
