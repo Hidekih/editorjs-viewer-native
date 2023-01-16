@@ -1,4 +1,5 @@
 import {
+  Bold,
   Code,
   FallbackBlock,
   Header,
@@ -10,10 +11,11 @@ import {
   Paragraph,
   Quote,
   SimpleImage,
-  Bold
+  Underline,
 } from './components';
 
 import type {
+  IBoldProps,
   ICodeProps,
   IFallbackBlockProps,
   IHeaderProps,
@@ -25,13 +27,14 @@ import type {
   IParagraphProps,
   IQuoteProps,
   ISimpleImageProps,
-  IBoldProps,
+  IUnderlineProps,
 } from './components';
 
 import { createEditorJsViewer } from './config';
 import type { IEditorJsData, IEditorJsViwerNativeProps, ICreateEditorJsViewerProps, IToolsParser } from './types';
 
 export {
+  Bold,
   Code,
   FallbackBlock,
   Header,
@@ -43,11 +46,12 @@ export {
   Paragraph,
   Quote,
   SimpleImage,
-  Bold,
+  Underline,
   createEditorJsViewer,
 };
 
 export type {
+  IBoldProps,
   ICodeProps,
   ICreateEditorJsViewerProps,
   IFallbackBlockProps,
@@ -62,6 +66,6 @@ export type {
   IParagraphProps,
   IQuoteProps,
   ISimpleImageProps,
-  IBoldProps,
   IToolsParser,
+  IUnderlineProps
 };

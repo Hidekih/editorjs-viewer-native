@@ -1,3 +1,5 @@
+export { Bold } from './Bold';
+export type { IBoldProps } from './Bold/types';
 export { Code } from './Code';
 export type { ICodeProps } from './Code/types';
 export { FallbackBlock } from './FallbackBlock';
@@ -20,5 +22,5 @@ export { Quote } from './Quote';
 export type { IQuoteProps } from './Quote/types';
 export { SimpleImage } from './SimpleImage';
 export type { ISimpleImageProps } from './SimpleImage/types';
-export { Bold } from './Bold';
-export type { IBoldProps } from './Bold/types';
+export { Underline } from './Underline';
+export type { IUnderlineProps } from './Underline/types';
