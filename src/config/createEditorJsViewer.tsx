@@ -14,10 +14,7 @@ import { Quote } from '../components/Quote';
 import { IEditorJsViwerNativeProps } from '../types/editorJsViwerNative';
 import { ICreateEditorJsViewerProps } from '../types/createEditorJsViewerProps';
 
-export const createEditorJsViewer = ({
-  toolsParser,
-  unknownBlockFallback = false
-}: ICreateEditorJsViewerProps) => {
+export const createEditorJsViewer = (props?: ICreateEditorJsViewerProps) => {
   const {
     header,
     image,
@@ -26,7 +23,7 @@ export const createEditorJsViewer = ({
     paragraph,
     simpleImage,
     quote,
-  } = toolsParser ?? {};
+  } = props?.toolsParser ?? {};
 
   return memo(({ data, ...rest }: IEditorJsViwerNativeProps) => (
     <View style={{ width: '100%' }} {...rest}>
@@ -186,7 +183,7 @@ export const createEditorJsViewer = ({
 
           default: return (
             <>
-              {unknownBlockFallback ? (
+              {props?.unknownBlockFallback ? (
                 <FallbackBlock key={block.id} blockType={block.type} />
               ) : (
                 null
