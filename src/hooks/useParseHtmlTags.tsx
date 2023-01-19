@@ -2,11 +2,7 @@ import { createElement, ReactNode, Fragment, useMemo, useCallback } from 'react'
 import { Text } from 'react-native';
 import { decode } from 'html-entities';
 
-import { Bold } from '../Components/Bold';
-import { Code } from '../components/Code';
-import { Italic } from '../components/Italic';
-import { Mark } from '../components/Mark';
-import { Underline } from '../components/Underline';
+import { Bold, Code, Italic, Mark, Underline } from '../components';
 
 export const useParseHtmlTags = () => {
   const defaultListTags = useMemo(() => [
