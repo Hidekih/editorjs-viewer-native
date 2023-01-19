@@ -1,6 +1,6 @@
 {
   "name": "editorjs-viewer-native",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A React Native viewer for JSON created by EditorJs",
   "main": "dist/index.mjs",
   "type": "module",
