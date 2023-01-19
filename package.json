@@ -21,7 +21,8 @@
     "dist/**/*"
   ],
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external react,react-native"
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react,react-native",
+    "pub": "tsup src/index.tsx --format esm,cjs --dts --external react,react-native && npm publish --access public"
   },
   "dependencies": {
     "html-entities": "^2.3.3"
