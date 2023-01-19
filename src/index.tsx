@@ -1,6 +1,7 @@
 import {
   Bold,
   Code,
+  Delimiter,
   FallbackBlock,
   Header,
   ImageFrame,
@@ -17,6 +18,7 @@ import {
 import type {
   IBoldProps,
   ICodeProps,
+  IDelimiterProps,
   IFallbackBlockProps,
   IHeaderProps,
   IImageFrameProps,
@@ -36,6 +38,7 @@ import type { IEditorJsData, IEditorJsViwerNativeProps, ICreateEditorJsViewerPro
 export {
   Bold,
   Code,
+  Delimiter,
   FallbackBlock,
   Header,
   ImageFrame,
@@ -53,6 +56,7 @@ export {
 export type {
   IBoldProps,
   ICodeProps,
+  IDelimiterProps,
   ICreateEditorJsViewerProps,
   IFallbackBlockProps,
   IEditorJsData,

@@ -1,10 +1,13 @@
-import { IHeaderProps } from '../components/Header/types';
-import { IImageFrameProps } from '../components/ImageFrame/types';
-import { ILinkToolProps } from '../components/LinkTool/types';
-import { IListProps } from '../components/List/types';
-import { IParagraphProps } from '../components/Paragraph/types';
-import { ISimpleImageProps } from '../components/SimpleImage/types';
-import { IQuoteProps } from '../components/Quote/types';
+import type {
+  IDelimiterProps,
+  IHeaderProps,
+  IImageFrameProps,
+  ILinkToolProps,
+  IListProps,
+  IParagraphProps,
+  ISimpleImageProps,
+  IQuoteProps
+} from '../components';
 
 export interface ICreateEditorJsViewerProps {
   toolsParser?: IToolsParser;
@@ -15,6 +18,12 @@ export interface ICreateEditorJsViewerProps {
 }
 
 export interface IToolsParser {
+  delimiter?: {
+    /**
+     * A component with type {@link IDelimiterProps} or any for your custom header tool
+    */
+    CustomComponent?: (props: IDelimiterProps | any ) => JSX.Element;
+  },
   header?: {
     /**
      * A component with type {@link IHeaderProps} or any for your custom header tool

@@ -2,20 +2,22 @@
 import { memo } from 'react';
 import { View } from 'react-native';
 
-import { FallbackBlock } from '../components/FallbackBlock';
-import { Paragraph } from '../components/Paragraph';
-import { Header } from '../components/Header';
-import { List } from '../components/List';
-import { SimpleImage } from '../components/SimpleImage';
-import { ImageFrame } from '../components/ImageFrame';
-import { LinkTool } from '../components/LinkTool';
-import { Quote } from '../components/Quote';
-
-import { IEditorJsViwerNativeProps } from '../types/editorJsViwerNative';
-import { ICreateEditorJsViewerProps } from '../types/createEditorJsViewerProps';
+import type { IEditorJsViwerNativeProps, ICreateEditorJsViewerProps } from '../types';
+import {
+  Delimiter,
+  FallbackBlock,
+  Header,
+  ImageFrame,
+  LinkTool,
+  List,
+  Paragraph,
+  Quote,
+  SimpleImage
+} from '../components';
 
 export const createEditorJsViewer = (props?: ICreateEditorJsViewerProps) => {
   const {
+    delimiter,
     header,
     image,
     linkTool,
@@ -43,6 +45,24 @@ export const createEditorJsViewer = (props?: ICreateEditorJsViewerProps) => {
         };
 
         switch (block.type) {
+          case 'delimiter': {
+            const CustomHeader = delimiter?.CustomComponent;
+
+            return (
+              <>
+                {CustomHeader ? (
+                  <CustomHeader key={block.id} data={block.data} />
+                ) : (
+                  <Delimiter
+                    key={block.id}
+                    data={block.data}
+                    style={fixMarginIfIsFirstOrLast}
+                  />
+                )}
+              </>
+            );
+          }
+
           case 'header': {
             const CustomHeader = header?.CustomComponent;
 

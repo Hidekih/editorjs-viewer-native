@@ -19,14 +19,15 @@ yarn add editorjs-viewer-native
 
 ## Current support for editorJs's plugins:
 - [`Code`](https://github.com/editor-js/code)
+- [`Delimiter`](https://github.com/editor-js/delimiter)
 - [`Header`](https://github.com/editor-js/header)
 - [`Image`](https://github.com/editor-js/image)
 - [`Link`](https://github.com/editor-js/link)
 - [`List`](https://github.com/editor-js/list)
-- [`Paragraph`](https://github.com/editor-js/paragraph)
 - [`Marker`](https://github.com/editor-js/marker)
-- [`Simple Image`](https://github.com/editor-js/simple-image)
+- [`Paragraph`](https://github.com/editor-js/paragraph)
 - [`Quote`](https://github.com/editor-js/quote)
+- [`Simple Image`](https://github.com/editor-js/simple-image)
 - [`Underline`](https://github.com/editor-js/underline)
 
 ## Usage
@@ -90,9 +91,8 @@ const EditorJsViewerNative = createEditorJsViewer({
 
 ## Update plans
 Support for:
-- [`Delimiter`](https://github.com/editor-js/delimiter)
 - [`Checklist`](https://github.com/editor-js/checklist)
-- [`Table`](https://github.com/editor-js/table)
-- [`Raw HTML`](https://github.com/editor-js/raw)
 - [`Personality`](https://github.com/editor-js/personality)
+- [`Raw HTML`](https://github.com/editor-js/raw)
+- [`Table`](https://github.com/editor-js/table)
 - Custom blocks

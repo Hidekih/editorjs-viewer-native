@@ -2,6 +2,8 @@ export { Bold } from './Bold';
 export type { IBoldProps } from './Bold/types';
 export { Code } from './Code';
 export type { ICodeProps } from './Code/types';
+export { Delimiter } from './Delimiter';
+export type { IDelimiterProps } from './Delimiter/types';
 export { FallbackBlock } from './FallbackBlock';
 export type { IFallbackBlockProps } from './FallbackBlock/types';
 export { Header } from './Header';
