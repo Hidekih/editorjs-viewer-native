@@ -2,7 +2,12 @@
   "name": "editorjs-viewer-native",
   "version": "0.3.0",
   "description": "A React Native viewer for JSON created by EditorJs",
-  "main": "dist/index.js",
+  "main": "dist/index.mjs",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "keywords": [
     "react-native",
     "ios",
@@ -16,13 +21,9 @@
   },
   "author": "Alexandre Hideki Siroma",
   "license": "MIT",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist/**/*"
-  ],
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external react,react-native",
-    "pub": "tsup src/index.tsx --format esm,cjs --dts --external react,react-native && npm publish --access public"
+    "build": "rm -rf dist && tsup src/index.tsx --format esm --dts --minify --external react,react-native",
+    "pub": "tsup src/index.tsx --format esm --dts --minify --external react,react-native && npm publish --access public"
   },
   "dependencies": {
     "html-entities": "^2.3.3"
