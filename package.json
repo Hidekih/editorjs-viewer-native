@@ -24,7 +24,7 @@
   "scripts": {
     "test": "jest --no-cache",
     "build": "rm -rf dist && tsup src/index.tsx --format esm,cjs --dts --minify --external react,react-native",
-    "update:readme": "publish --update-readme",
+    "update:readme": "npm publish --update-readme",
     "pub": "jest && tsup src/index.tsx --format esm,cjs --dts --minify --external react,react-native && npm publish --access public"
   },
   "dependencies": {
