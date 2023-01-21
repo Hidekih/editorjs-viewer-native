@@ -3,7 +3,6 @@
   "version": "0.3.2",
   "description": "A React Native viewer for JSON created by EditorJs",
   "main": "dist/index.js",
-  "type": "module",
   "types": "dist/index.d.ts",
   "files": [
     "dist/**/*"
@@ -23,7 +22,7 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "build": "rm -rf dist && tsup src/index.tsx --format esm --dts --minify --external react,react-native",
+    "build": "rm -rf dist && tsup src/index.tsx --format cjs --dts --minify --external react,react-native",
     "pub": "tsup src/index.tsx --format esm --dts --minify --external react,react-native && npm publish --access public"
   },
   "dependencies": {
