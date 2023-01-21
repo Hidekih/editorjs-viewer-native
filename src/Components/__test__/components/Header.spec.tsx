@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react-native';
 
 import { Header } from '../../Header/index';
-import { headerMock } from '../../../mock/editorJsOutputData';
+import { headerMock } from '../mock/editorJsOutputData';
 
 describe('Header', () => {
   it('Should be able to render a Header with value', async () => {
