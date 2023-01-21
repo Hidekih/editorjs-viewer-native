@@ -98,4 +98,4 @@ Support for:
 - [`Table`](https://github.com/editor-js/table)
 - Custom blocks
 
-I current working to integrate unit test!
+- Add more test!
