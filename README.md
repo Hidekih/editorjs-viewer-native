@@ -97,3 +97,5 @@ Support for:
 - [`Raw HTML`](https://github.com/editor-js/raw)
 - [`Table`](https://github.com/editor-js/table)
 - Custom blocks
+
+I current working to integrate unit test!
