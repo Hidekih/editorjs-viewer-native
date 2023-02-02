@@ -10,6 +10,16 @@
         }
       },
       {
+        "id": "testePersonality",
+        "type": "personality",
+        "data": {
+          "name": "Elon Musk",
+          "description": "Elon Reeve Musk FRS is a technology entrepreneur, investor, and engineer. He holds South African, Canadian, and U.S. citizenship and is the founder",
+          "link": "https://twitter.com/elonmusk",
+          "photo": "https://images.unsplash.com/photo-1661956602139-ec64991b8b16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=665&q=80"
+        }
+      },
+      {
         "id": "testeP",
         "type": "paragraph",
         "data": {

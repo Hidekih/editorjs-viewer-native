@@ -5,6 +5,7 @@ import type {
   ILinkToolProps,
   IListProps,
   IParagraphProps,
+  IPersonalityProps,
   ISimpleImageProps,
   IQuoteProps
 } from '../components';
@@ -75,6 +76,12 @@ export interface IToolsParser {
      * This prop will be ignored if you use a CustomComponent
     */
     fontFamily?: string;
+  }
+  personality?: {
+    /**
+     * A component with type {@link IPersonalityProps} or any for your custom paragraph tool
+    */
+    CustomComponent?: (props: IPersonalityProps | any ) => JSX.Element;
   }
   simpleImage?: {
     /**

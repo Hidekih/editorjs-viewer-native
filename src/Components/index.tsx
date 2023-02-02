@@ -20,6 +20,8 @@ export { Mark } from './Mark';
 export type { IMarkProps } from './Mark/types';
 export { Paragraph } from './Paragraph';
 export type { IParagraphProps } from './Paragraph/types';
+export { Personality } from './Personality';
+export type { IPersonalityProps } from './Personality/types';
 export { Quote } from './Quote';
 export type { IQuoteProps } from './Quote/types';
 export { SimpleImage } from './SimpleImage';

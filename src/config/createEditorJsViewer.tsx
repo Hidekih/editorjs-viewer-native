@@ -11,6 +11,7 @@ import {
   LinkTool,
   List,
   Paragraph,
+  Personality,
   Quote,
   SimpleImage
 } from '../components';
@@ -23,6 +24,7 @@ export const createEditorJsViewer = (props?: ICreateEditorJsViewerProps) => {
     linkTool,
     list,
     paragraph,
+    personality,
     simpleImage,
     quote,
   } = props?.toolsParser ?? {};
@@ -150,6 +152,24 @@ export const createEditorJsViewer = (props?: ICreateEditorJsViewerProps) => {
                     key={block.id}
                     data={block.data}
                     fontFamily={paragraph?.fontFamily}
+                    style={fixMarginIfIsFirstOrLast}
+                  />
+                )}
+              </>
+            );
+          }
+
+          case 'personality': {
+            const CustomPersonality = personality?.CustomComponent;
+
+            return (
+              <>
+                {CustomPersonality ? (
+                  <CustomPersonality key={block.id} data={block.data} />
+                ) : (
+                  <Personality
+                    key={block.id}
+                    data={block.data}
                     style={fixMarginIfIsFirstOrLast}
                   />
                 )}

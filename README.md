@@ -27,6 +27,7 @@ yarn add editorjs-viewer-native
 - [`List`](https://github.com/editor-js/list)
 - [`Marker`](https://github.com/editor-js/marker)
 - [`Paragraph`](https://github.com/editor-js/paragraph)
+- [`Personality`](https://github.com/editor-js/personality)
 - [`Quote`](https://github.com/editor-js/quote)
 - [`Simple Image`](https://github.com/editor-js/simple-image)
 - [`Underline`](https://github.com/editor-js/underline)
@@ -93,7 +94,6 @@ const EditorJsViewerNative = createEditorJsViewer({
 ## Update plans
 Support for:
 - [`Checklist`](https://github.com/editor-js/checklist)
-- [`Personality`](https://github.com/editor-js/personality)
 - [`Raw HTML`](https://github.com/editor-js/raw)
 - [`Table`](https://github.com/editor-js/table)
 - Custom blocks
