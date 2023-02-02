@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 // Size of dataContainer padding + childs height
-const IMAGEHEIGHT = 100;
+const IMAGEHEIGHT = 104;
 
 export const styles = StyleSheet.create({
   wrapper: {
@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
     color: '#7D7C78',
     marginTop: 4,
     fontSize: 14,
-    height: 32
+    height: 36
   },
   link: {
     marginTop: 6,
