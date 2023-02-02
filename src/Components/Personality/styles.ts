@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 // Size of dataContainer padding + childs height
-const IMAGEHEIGHT = 78;
+const IMAGEHEIGHT = 80;
 
 export const styles = StyleSheet.create({
   wrapper: {
