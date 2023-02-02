@@ -5,7 +5,7 @@ import { IMAGEHEIGHT } from '../../constants/sizes';
 export const styles = StyleSheet.create({
   container: {
     width: '100%',
-    marginVertical: 6,
+    marginVertical: 8,
     alignItems: 'center'
   },
   image: {

@@ -6,12 +6,12 @@ const IMAGEHEIGHT = 100;
 export const styles = StyleSheet.create({
   wrapper: {
     width: '100%',
-    marginVertical: 6,
+    marginVertical: 8,
   },
   container: {
     flexDirection: 'row',
     width: '100%',
-    borderRadius: 2,
+    borderRadius: 4,
     borderColor: '#DFDFDE',
     borderStyle: 'solid',
     borderWidth: 1,

@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   global: {
-    marginVertical: 6,
+    marginVertical: 8,
     color: '#181819',
   },
   h1: {
