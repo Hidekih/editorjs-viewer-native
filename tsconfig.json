@@ -1,19 +1,20 @@
 {
-    "compilerOptions": {
-      "target": "es6",
-      "module": "es6",
-      "declaration": true,
-      "outDir": "./dist",
-      "strict": true,
-      "jsx": "react-native",
-      "skipLibCheck": true,
-      "moduleResolution": "node"
-    },
-    "include": [
-      "src"
-    ],
-    "exclude": [
-      "node_modules",
-      "**/__tests__/*"
-    ]
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6",
+    "declaration": true,
+    "outDir": "./dist",
+    "strict": true,
+    "jsx": "react-native",
+    "skipLibCheck": true,
+    "moduleResolution": "node"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/__tests__/*"
+  ],
+  "extends": "expo/tsconfig.base"
 }
