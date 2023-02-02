@@ -5,7 +5,7 @@
         "id": "testeH",
         "type": "header",
         "data": {
-          "text": "A heading",
+          "text": "Find me",
           "level": 2
         }
       },
@@ -13,41 +13,32 @@
         "id": "testePersonality",
         "type": "personality",
         "data": {
-          "name": "Elon Musk",
-          "description": "Elon Reeve Musk FRS is a technology entrepreneur, investor, and engineer. He holds South African, Canadian, and U.S. citizenship and is the founder",
-          "link": "https://twitter.com/elonmusk",
-          "photo": "https://images.unsplash.com/photo-1661956602139-ec64991b8b16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=665&q=80"
+          "name": "Alexandre Hideki Siroma",
+          "description": "Just a developer",
+          "link": "https://twitter.com/HidekihTV",
+          "photo": "https://avatars.githubusercontent.com/u/59781045?s=400&u=212b658c65674524eedf2ff5afa70df40a8feb40&v=4"
         }
       },
       {
         "id": "testeP",
         "type": "paragraph",
         "data": {
-          "text": "This is a co<b>rno </b><code class=\"inline-code\"><b>&lt;b&gt;ex</b>ample&lt;/b&gt;</code> text"
+          "text": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
         }
       },
       {
         "id": "testeQuote",
         "type" : "quote",
         "data" : {
-            "text" : "The unexamined life is not worth living.",
-            "caption" : "Socrates",
-            "alignment" : "center"
+            "text" : "Eu prefiro morrer do que perder a vida!",
+            "caption" : "Chaves",
+            "alignment" : "left"
         }
       },
       {
         "id": "testeDelimiter",
         "type": "delimiter",
         "data": {}
-      },
-      {
-        "id": "teasteQaaauote",
-        "type": "quote",
-        "data": {
-          "text": "A quote",
-          "caption": "With a caption of corse",
-          "alignment": "left"
-        }
       },
       {
         "id": "dasdasdsdddddddddddddsddb",
@@ -62,26 +53,6 @@
                     "url" : "https://codex.so/public/app/img/meta_img.png"
                 }
             }
-        }
-      },
-      {
-        "id": "testeQcheck",
-        "type": "checklist",
-        "data": {
-          "items": [
-            {
-              "text": "Check 1",
-              "checked": false
-            },
-            {
-              "text": "Check 2",
-              "checked": true
-            },
-            {
-              "text": "Check 3",
-              "checked": false
-            }
-          ]
         }
       },
       {
