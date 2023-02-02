@@ -1,5 +1,7 @@
 <p align="center">
+  </ br>
   <img src="https://raw.githubusercontent.com/Hidekih/editorjs-viewer-native/0201fbb59a26ca1965dfcb7ef4723079bcc110ed/public/EditorJs%20Native%202.svg" alt="EditorJsNativeViewer logo" />
+  </ br>
 </p>
 
 [![npm version](https://img.shields.io/npm/v/editorjs-viewer-native?style=flat-square)](https://badge.fury.io/js/editorjs-viewer-native)
@@ -53,7 +55,7 @@ export default function App() {
 ```
 
 ## Custom component
-If you want to use your custom block for render a data, you can define a customComponent in `createEditorJsViewer` config object.
+If you want to use your custom component to render a data, you can define a customComponent in `createEditorJsViewer` config object.
 ```tsx
 import { ScrollView, Text } from 'react-native';
 import { createEditorJsViewer, IHeaderProps } from "editorjs-viewer-native";
@@ -91,11 +93,16 @@ const EditorJsViewerNative = createEditorJsViewer({
 })
 ```
 
+
+
 ## Update plans
-Support for:
+### Support for:
 - [`Checklist`](https://github.com/editor-js/checklist)
 - [`Raw HTML`](https://github.com/editor-js/raw)
 - [`Table`](https://github.com/editor-js/table)
 - Custom blocks
 
-- Add more test!
+### Add more test!
+
+## Open source
+Feel free to clone/fork this project!
