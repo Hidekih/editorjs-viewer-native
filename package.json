@@ -2,7 +2,7 @@
   "name": "editorjs-viewer-native",
   "version": "0.4.2",
   "description": "A React Native viewer for JSON created by EditorJs",
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
   "author": "Alexandre Hideki Siroma",
   "license": "MIT",
   "scripts": {
-    "dev": "npm set init-main 'node_modules/expo/AppEntry.js' && expo start",
+    "dev": "npm set init.main \"node_modules/expo/AppEntry.js\" && expo start",
     "test": "jest --no-cache",
     "build": "rm -rf dist && tsup src/index.tsx --format esm,cjs --dts --minify --external react,react-native",
     "update:readme": "npm publish --update-readme",
