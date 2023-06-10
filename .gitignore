@@ -78,4 +78,4 @@ dist
 # Personal files
 #
 data.json
-tmp/*
+tmp/
