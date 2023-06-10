@@ -50,65 +50,51 @@ export const createEditorJsViewer = (props?: ICreateEditorJsViewerProps) => {
           case 'delimiter': {
             const CustomHeader = delimiter?.CustomComponent;
 
-            return (
-              <>
-                {CustomHeader ? (
-                  <CustomHeader key={block.id} data={block.data} />
-                ) : (
-                  <Delimiter
-                    key={block.id}
-                    data={block.data}
-                    style={fixMarginIfIsFirstOrLast}
-                  />
-                )}
-              </>
-            );
+            return CustomHeader ? (
+                <CustomHeader key={block.id} data={block.data} />
+              ) : (
+                <Delimiter
+                  key={block.id}
+                  data={block.data}
+                  style={fixMarginIfIsFirstOrLast}
+                />
+              );
           }
 
           case 'header': {
             const CustomHeader = header?.CustomComponent;
 
-            return (
-              <>
-                {CustomHeader ? (
-                  <CustomHeader key={block.id} data={block.data} />
-                ) : (
-                  <Header
-                    key={block.id}
-                    data={block.data}
-                    style={fixMarginIfIsFirstOrLast}
-                    fontFamily={header?.fontFamily}
-                  />
-                )}
-              </>
-            );
+            return CustomHeader ? (
+                <CustomHeader key={block.id} data={block.data} />
+              ) : (
+                <Header
+                  key={block.id}
+                  data={block.data}
+                  style={fixMarginIfIsFirstOrLast}
+                  fontFamily={header?.fontFamily}
+                />
+              );
           }
 
           case 'image': {
             const CustomImage = image?.CustomComponent;
 
-            return (
-              <>
-                {CustomImage ? (
-                  <CustomImage key={block.id} data={block.data} />
-                ) : (
-                  <ImageFrame
-                    key={block.id}
-                    data={block.data}
-                    captionFontFamily={image?.captionFontFamily}
-                    style={fixMarginIfIsFirstOrLast}
-                  />
-                )}
-              </>
+            return CustomImage ? (
+                <CustomImage key={block.id} data={block.data} />
+              ) : (
+                <ImageFrame
+                  key={block.id}
+                  data={block.data}
+                  captionFontFamily={image?.captionFontFamily}
+                  style={fixMarginIfIsFirstOrLast}
+                />
             );
           }
 
           case 'linkTool': {
             const CustomLinkTool = linkTool?.CustomComponent;
 
-            return (
-              <>
-                {CustomLinkTool ? (
+            return CustomLinkTool ? (
                   <CustomLinkTool key={block.id} data={block.data} />
                 ) : (
                   <LinkTool
@@ -116,17 +102,13 @@ export const createEditorJsViewer = (props?: ICreateEditorJsViewerProps) => {
                     data={block.data}
                     style={fixMarginIfIsFirstOrLast}
                   />
-                )}
-              </>
-            );
+                );
           }
 
           case 'list': {
             const CustomList = list?.CustomComponent;
 
-            return (
-              <>
-                {CustomList ? (
+            return CustomList ? (
                   <CustomList key={block.id} data={block.data} />
                 ) : (
                   <List
@@ -135,17 +117,13 @@ export const createEditorJsViewer = (props?: ICreateEditorJsViewerProps) => {
                     fontFamily={list?.fontFamily}
                     style={fixMarginIfIsFirstOrLast}
                   />
-                )}
-              </>
-            );
+                );
           }
 
           case 'paragraph': {
             const CustomParagraph = paragraph?.CustomComponent;
 
-            return (
-              <>
-                {CustomParagraph ? (
+            return CustomParagraph ? (
                   <CustomParagraph key={block.id} data={block.data} />
                 ) : (
                   <Paragraph
@@ -154,17 +132,13 @@ export const createEditorJsViewer = (props?: ICreateEditorJsViewerProps) => {
                     fontFamily={paragraph?.fontFamily}
                     style={fixMarginIfIsFirstOrLast}
                   />
-                )}
-              </>
-            );
+                );
           }
 
           case 'personality': {
             const CustomPersonality = personality?.CustomComponent;
 
-            return (
-              <>
-                {CustomPersonality ? (
+            return CustomPersonality ? (
                   <CustomPersonality key={block.id} data={block.data} />
                 ) : (
                   <Personality
@@ -172,17 +146,13 @@ export const createEditorJsViewer = (props?: ICreateEditorJsViewerProps) => {
                     data={block.data}
                     style={fixMarginIfIsFirstOrLast}
                   />
-                )}
-              </>
-            );
+                );
           }
 
           case 'simpleImage': {
             const CustomSimpleImage = simpleImage?.CustomComponent;
 
-            return (
-              <>
-                {CustomSimpleImage ? (
+            return CustomSimpleImage ? (
                   <CustomSimpleImage key={block.id} data={block.data} />
                 ) : (
                   <SimpleImage
@@ -191,17 +161,13 @@ export const createEditorJsViewer = (props?: ICreateEditorJsViewerProps) => {
                     captionFontFamily={simpleImage?.captionFontFamily}
                     style={fixMarginIfIsFirstOrLast}
                   />
-                )}
-              </>
-            );
+                );
           }
 
           case 'quote': {
             const CustomQuote = quote?.CustomComponent ?? Quote;
 
-            return (
-              <>
-                {CustomQuote ? (
+            return CustomQuote ? (
                   <CustomQuote key={block.id} data={block.data} />
                 ) : (
                   <Quote
@@ -211,9 +177,7 @@ export const createEditorJsViewer = (props?: ICreateEditorJsViewerProps) => {
                     captionFontFamily={quote?.captionFontFamily}
                     style={fixMarginIfIsFirstOrLast}
                   />
-                )}
-              </>
-            );
+                );
           }
 
           // TODO
@@ -221,15 +185,11 @@ export const createEditorJsViewer = (props?: ICreateEditorJsViewerProps) => {
           //   return <></>;
           // }
 
-          default: return (
-            <>
-              {props?.unknownBlockFallback ? (
+          default: return props?.unknownBlockFallback ? (
                 <FallbackBlock key={block.id} blockType={block.type} />
-              ) : (
-                null
-              ) }
-            </>
-          );
+            ) : (
+              null
+            );
         }
       })}
     </View>
