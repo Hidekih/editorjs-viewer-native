@@ -1,7 +1,5 @@
 <p align="center">
-  </br>
   <img src="https://raw.githubusercontent.com/Hidekih/editorjs-viewer-native/0201fbb59a26ca1965dfcb7ef4723079bcc110ed/public/EditorJs%20Native%202.svg" alt="EditorJsNativeViewer logo" />
-  </br>
 </p>
 
 [![npm version](https://img.shields.io/npm/v/editorjs-viewer-native?style=flat-square)](https://badge.fury.io/js/editorjs-viewer-native)
