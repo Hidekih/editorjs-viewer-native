@@ -1,6 +1,6 @@
-import { Image, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
 
-import { IMAGEHEIGHT } from '../../constants/sizes';
+import { FullWidthImage } from '../FullWidthImage';
 import { IImageFrameProps } from './types';
 import { styles } from './styles';
 
@@ -9,19 +9,16 @@ const ImageFrame = ({ data, captionFontFamily, style, ...rest }: IImageFrameProp
     <View
       style={[
         style,
-        {
-          ...styles.container,
-          height: data.caption ? IMAGEHEIGHT + 24 : IMAGEHEIGHT,
-        }
+        { ...styles.container }
       ]}
       {...rest}
     >
-      <Image
+      <FullWidthImage
         accessible
         accessibilityHint={`${data.caption} image`}
         accessibilityRole="image"
         source={{ uri: data.file.url }}
-        style={styles.image}
+        uri={data.file.url}
       />
 
       {data.caption && (
@@ -29,7 +26,7 @@ const ImageFrame = ({ data, captionFontFamily, style, ...rest }: IImageFrameProp
           aria-hidden
           style={{ ...styles.caption, fontFamily: captionFontFamily }}
         >
-          {data.caption}
+          {data.caption}a
         </Text>
       ) }
     </View>

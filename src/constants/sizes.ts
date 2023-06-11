@@ -1,1 +1,1 @@
-export const IMAGEHEIGHT = 180;
+export const MAX_IMAGE_HEIGHT = 180;

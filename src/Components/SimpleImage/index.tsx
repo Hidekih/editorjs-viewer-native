@@ -1,7 +1,7 @@
-import { Image, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
 
-import { IMAGEHEIGHT } from '../../constants/sizes';
 import { ISimpleImageProps } from './types';
+import { FullWidthImage } from '../FullWidthImage';
 import { styles } from './styles';
 
 const SimpleImage = ({ data, captionFontFamily, style, ...rest }: ISimpleImageProps) => {
@@ -9,19 +9,16 @@ const SimpleImage = ({ data, captionFontFamily, style, ...rest }: ISimpleImagePr
     <View
       style={[
         style,
-        {
-          ...styles.container,
-          height: data.caption ? IMAGEHEIGHT + 20 : IMAGEHEIGHT,
-        }
+        { ...styles.container }
       ]}
       {...rest}
     >
-      <Image
+      <FullWidthImage
         accessible
         accessibilityHint={`${data.caption} image`}
-        accessibilityRole='image'
+        accessibilityRole="image"
         source={{ uri: data.url }}
-        style={styles.image}
+        uri={data.url}
       />
 
       {data.caption && (
