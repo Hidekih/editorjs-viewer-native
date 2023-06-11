@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 // Size of dataContainer padding + childs height
-const IMAGEHEIGHT = 80;
+const MAX_IMAGE_SIZE = 80;
 
 export const styles = StyleSheet.create({
   wrapper: {
@@ -37,14 +37,14 @@ export const styles = StyleSheet.create({
     height: 16
   },
   imageContainer: {
-    width: IMAGEHEIGHT,
-    height: IMAGEHEIGHT,
+    width: MAX_IMAGE_SIZE,
+    height: MAX_IMAGE_SIZE,
     margin: 12,
     alignItems: 'center'
   },
   image: {
-    width: IMAGEHEIGHT,
-    height: IMAGEHEIGHT,
+    width: MAX_IMAGE_SIZE,
+    height: MAX_IMAGE_SIZE,
     resizeMode: 'cover',
     borderRadius: 4,
   },
