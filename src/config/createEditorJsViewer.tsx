@@ -32,7 +32,7 @@ export const createEditorJsViewer = (props?: ICreateEditorJsViewerProps) => {
   return memo(({ data, ...rest }: IEditorJsViwerNativeProps) => (
     <View style={{ width: '100%' }} {...rest}>
       {data.blocks.map((block, index) => {
-        // SimpleImage type can be named as `image`
+        // Some simpleImage type can be named as `image` but has a difference betwen 'normal' image
         if (block.type == 'image' && block.data?.file == null) {
           block.type = 'simpleImage';
         }
