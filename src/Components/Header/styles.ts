@@ -7,11 +7,11 @@ export const styles = StyleSheet.create({
   },
   h1: {
     fontWeight: '700',
-    fontSize: 24
+    fontSize: 28
   },
   h2: {
     fontWeight: '700',
-    fontSize: 22
+    fontSize: 24
   },
   h3: {
     fontWeight: '600',
