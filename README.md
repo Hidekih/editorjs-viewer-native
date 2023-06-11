@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Hidekih/editorjs-viewer-native/0201fbb59a26ca1965dfcb7ef4723079bcc110ed/public/EditorJs%20Native%202.svg" alt="EditorJsNativeViewer logo" />
+  <img src="https://raw.githubusercontent.com/Hidekih/editorjs-viewer-native/main/public/presentation_2.jpg" alt="EditorJs native viewer presentation image" />
 </p>
 
 [![npm version](https://img.shields.io/npm/v/editorjs-viewer-native?style=flat-square)](https://badge.fury.io/js/editorjs-viewer-native)
@@ -92,15 +92,13 @@ const EditorJsViewerNative = createEditorJsViewer({
 ```
 
 
-
 ## Update plans
 ### Support for:
+- [`Attaches`](https://github.com/editor-js/attaches)
 - [`Checklist`](https://github.com/editor-js/checklist)
 - [`Raw HTML`](https://github.com/editor-js/raw)
 - [`Table`](https://github.com/editor-js/table)
 - Custom blocks
-
-### Add more test!
 
 ## Open source
 Feel free to clone/fork this project!
