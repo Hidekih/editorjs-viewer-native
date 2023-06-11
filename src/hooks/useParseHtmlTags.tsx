@@ -1,18 +1,23 @@
-import { createElement, ReactNode, Fragment, useMemo, useCallback } from 'react';
+import { createElement, ReactNode, Fragment, useCallback } from 'react';
 import { Text } from 'react-native';
 import { decode } from 'html-entities';
 
-import { Bold, Code, Italic, Mark, Underline } from '../components';
+import { Bold } from '../components/Bold';
+import { Code } from '../components/Code';
+import { Italic } from '../components/Italic';
+import { Mark } from '../components/Mark';
+import { Underline } from '../components/Underline';
+
+// ? This default list should not be responsibility of this hook ?
+const defaultListTags = [
+  'b',
+  'code',
+  'i',
+  'mark',
+  'u',
+];
 
 export const useParseHtmlTags = () => {
-  const defaultListTags = useMemo(() => [
-    'b',
-    'code',
-    'i',
-    'mark',
-    'u',
-  ], []);
-
   const getTagName = useCallback((value: string) => {
     const startTagName = value.trim().substring(1);
     const indexOfEndTagName = startTagName.match(/ (.*?)>/)?.index ?? 1;
