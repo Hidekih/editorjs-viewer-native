@@ -13,7 +13,7 @@ import type {
 export interface ICreateEditorJsViewerProps {
   toolsParser?: IToolsParser;
   /**
-   * Show a fallbac block when type block type is unknown. Default is `false`
+   * Show a fallback block when type of block is unknown. Default is `false`
    */
   unknownBlockFallback?: boolean;
 }
