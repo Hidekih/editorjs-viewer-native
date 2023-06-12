@@ -1,4 +1,4 @@
-import { TextProps } from 'react-native';
+import { StyleProp, ViewProps, ViewStyle } from 'react-native';
 
 export type IQuoteProps = {
   data: {
@@ -8,4 +8,5 @@ export type IQuoteProps = {
   };
   quoteFontFamily?: string;
   captionFontFamily?: string;
-} & TextProps;
+  containerStyle?: StyleProp<ViewStyle>;
+} & Omit<ViewProps, 'style'>;

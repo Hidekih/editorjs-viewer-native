@@ -15,10 +15,7 @@ const Paragraph = ({ data, fontFamily, style, ...rest }: IParagraphProps) => {
       accessible
       accessibilityRole="text"
       allowFontScaling={true}
-      style={[
-        style,
-        { ...styles.paragraph, fontFamily }
-      ]}
+      style={[ styles.paragraph, style, { fontFamily } ]}
       {...rest}
     >
       {parsedText}

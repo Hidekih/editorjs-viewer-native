@@ -1,4 +1,4 @@
-import { TouchableOpacityProps } from 'react-native';
+import { StyleProp, TouchableOpacityProps, ViewStyle } from 'react-native';
 
 export type IPersonalityProps = {
   data: {
@@ -7,5 +7,6 @@ export type IPersonalityProps = {
     link: string;
     photo?: string;
   };
-} & TouchableOpacityProps;
+  containerStyle?: StyleProp<ViewStyle>;
+} & Omit<TouchableOpacityProps, 'style'>;
 

@@ -4,13 +4,10 @@ import { ISimpleImageProps } from './types';
 import { FullWidthImage } from '../FullWidthImage';
 import { styles } from './styles';
 
-const SimpleImage = ({ data, captionFontFamily, style, ...rest }: ISimpleImageProps) => {
+const SimpleImage = ({ data, captionFontFamily, containerStyle, ...rest }: ISimpleImageProps) => {
   return (
     <View
-      style={[
-        style,
-        { ...styles.container }
-      ]}
+      style={[ styles.container, containerStyle ]}
       {...rest}
     >
       <FullWidthImage
@@ -22,10 +19,7 @@ const SimpleImage = ({ data, captionFontFamily, style, ...rest }: ISimpleImagePr
       />
 
       {data.caption && (
-        <Text
-          aria-hidden
-          style={{ ...styles.caption, fontFamily: captionFontFamily }}
-        >
+        <Text aria-hidden style={{ ...styles.caption, fontFamily: captionFontFamily }}>
           {data.caption}
         </Text>
       )}

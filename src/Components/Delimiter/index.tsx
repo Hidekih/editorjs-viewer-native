@@ -4,17 +4,12 @@ import { decode } from 'html-entities';
 import { styles } from './styles';
 import { IDelimiterProps } from './types';
 
-/**
- * Reference https://github.com/editor-js/delimiter
-*/
-const Delimiter = ({ style, ...rest }: IDelimiterProps) => {
+/** Reference https://github.com/editor-js/delimiter */
+const Delimiter = ({ containerStyle, ...rest }: IDelimiterProps) => {
   return (
     <View
       aria-hidden
-      style={[
-        style,
-        { ...styles.container }
-      ]}
+      style={[ styles.container, containerStyle ]}
       {...rest}
     >
       <Text style={styles.delimiter}>{decode('&ast;')}</Text>

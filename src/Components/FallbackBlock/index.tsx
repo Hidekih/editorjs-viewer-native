@@ -3,11 +3,11 @@ import { View, Text } from 'react-native';
 import { IFallbackBlockProps } from './types';
 import { styles } from './styles';
 
-const FallbackBlock = ({ blockType, style, ...rest }: IFallbackBlockProps) => {
+const FallbackBlock = ({ blockType, containerStyle, ...rest }: IFallbackBlockProps) => {
   return (
     <View
       accessibilityRole='alert'
-      style={[ style, styles.container ]}
+      style={[ styles.container, containerStyle ]}
       {...rest}
     >
       <Text

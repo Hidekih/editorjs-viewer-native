@@ -10,7 +10,12 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: '#292929',
   },
-  dot: {
+  listStyleNumber: {
+    fontSize: 16,
+    color: '#292929',
+    marginRight: 16,
+  },
+  listStyleDot: {
     height: 6,
     maxHeight: 6,
     width: 6,
