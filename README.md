@@ -86,6 +86,7 @@ Now the component `MyHeader` will render all data of type **header**.
 ## Support for custom blocks
 If you want to render a custom block type, you can define a `customTools` in `createEditorJsViewer` config object.
 ```json
+// outputData.json
 {
   "blocks": [
     {
