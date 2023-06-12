@@ -5,7 +5,7 @@ import { styles } from './styles';
 import { IHeaderProps } from './types';
 
 const Header = ({ data, fontFamily, style, ...rest }: IHeaderProps) => {
-  const stylesByHeadingLevel = useMemo(() => styles[`h${data.level}`], []);
+  const headingStyleByLevel = useMemo(() => styles[`h${data.level}`], []);
 
   return (
     <Text
@@ -13,8 +13,10 @@ const Header = ({ data, fontFamily, style, ...rest }: IHeaderProps) => {
       accessibilityRole="header"
       allowFontScaling={true}
       style={[
+        styles.container,
+        headingStyleByLevel,
         style,
-        { ...styles.global, ...stylesByHeadingLevel, fontFamily }
+        { fontFamily: fontFamily },
       ]}
       {...rest}
     >

@@ -5,7 +5,7 @@ import { useParseHtmlTags } from '../../../hooks/useParseHtmlTags';
 import { styles } from './styles';
 import { IItemIListProps } from './types';
 
-export const ItemList = ({ value, listStyle, index, fontFamily }: IItemIListProps) => {
+const ListItem = ({ value, listStyle, index, fontFamily }: IItemIListProps) => {
   const { parseHtmlTag, defaultListTags } = useParseHtmlTags();
 
   const parsedText = useMemo(() => parseHtmlTag(defaultListTags, value), []);
@@ -14,8 +14,8 @@ export const ItemList = ({ value, listStyle, index, fontFamily }: IItemIListProp
     <View style={styles.container}>
       {
         {
-          'ordered': <View style={styles.dot}/>,
-          'unordered': <Text style={{ ...styles.listItem, marginRight: 16 }}>{index + 1}</Text>
+          'ordered': <View style={styles.listStyleDot}/>,
+          'unordered': <Text style={styles.listStyleNumber}>{index + 1}</Text>
         }[listStyle]
       }
 
@@ -23,10 +23,10 @@ export const ItemList = ({ value, listStyle, index, fontFamily }: IItemIListProp
         accessible
         accessibilityRole="text"
         allowFontScaling={true}
-        style={{
-          ...styles.listItem,
-          fontFamily
-        }}
+        style={[
+          styles.listItem,
+          { fontFamily }
+        ]}
       >
         {parsedText}
       </Text>
@@ -34,4 +34,4 @@ export const ItemList = ({ value, listStyle, index, fontFamily }: IItemIListProp
   );
 };
 
-export default ItemList;
+export { ListItem };

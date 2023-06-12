@@ -1,9 +1,7 @@
-import { ViewProps } from 'react-native';
+import { StyleProp, ViewProps, ViewStyle } from 'react-native';
 
-/**
- * Reference https://github.com/editor-js/delimiter
-*/
+/** Reference https://github.com/editor-js/delimiter */
 export type IDelimiterProps = {
-  // Eslint recommendation for empty object
   data: Record<string, never>;
-} & ViewProps;
+  containerStyle?: StyleProp<ViewStyle>;
+} & Omit<ViewProps, 'style'>;

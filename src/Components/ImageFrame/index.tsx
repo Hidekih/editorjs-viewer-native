@@ -4,15 +4,9 @@ import { FullWidthImage } from '../FullWidthImage';
 import { IImageFrameProps } from './types';
 import { styles } from './styles';
 
-const ImageFrame = ({ data, captionFontFamily, style, ...rest }: IImageFrameProps) => {
+const ImageFrame = ({ data, captionFontFamily, containerStyle, ...rest }: IImageFrameProps) => {
   return (
-    <View
-      style={[
-        style,
-        { ...styles.container }
-      ]}
-      {...rest}
-    >
+    <View style={[ styles.container, containerStyle ]} {...rest} >
       <FullWidthImage
         accessible
         accessibilityHint={`${data.caption} image`}
@@ -22,11 +16,8 @@ const ImageFrame = ({ data, captionFontFamily, style, ...rest }: IImageFrameProp
       />
 
       {data.caption && (
-        <Text
-          aria-hidden
-          style={{ ...styles.caption, fontFamily: captionFontFamily }}
-        >
-          {data.caption}a
+        <Text aria-hidden style={{ ...styles.caption, fontFamily: captionFontFamily }} >
+          {data.caption}
         </Text>
       ) }
     </View>

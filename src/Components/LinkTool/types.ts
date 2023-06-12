@@ -1,4 +1,4 @@
-import { TouchableOpacityProps } from 'react-native';
+import { StyleProp, TouchableOpacityProps, ViewStyle } from 'react-native';
 
 export type ILinkToolProps = {
   data: {
@@ -12,5 +12,6 @@ export type ILinkToolProps = {
         }
     }
   };
-} & TouchableOpacityProps;
+  containerStyle?: StyleProp<ViewStyle>;
+} & Omit<TouchableOpacityProps, 'style'>;
 

@@ -1,4 +1,4 @@
-import { TextProps } from 'react-native';
+import { StyleProp, ViewProps, ViewStyle } from 'react-native';
 
 export type IImageFrameProps = {
   data: {
@@ -11,4 +11,5 @@ export type IImageFrameProps = {
     stretched?: boolean;
   };
   captionFontFamily?: string;
-} & TextProps;
+  containerStyle?: StyleProp<ViewStyle>;
+} & Omit<ViewProps, 'style'>;

@@ -1,5 +1,7 @@
-import { ViewProps } from 'react-native';
+import { StyleProp, ViewProps, ViewStyle } from 'react-native';
 
 export type IFallbackBlockProps = {
   blockType: string;
-} & ViewProps;
+  containerStyle?: StyleProp<ViewStyle>;
+} & Omit<ViewProps, 'style'>;
+

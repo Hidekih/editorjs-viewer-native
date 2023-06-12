@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  global: {
+  container: {
     marginVertical: 8,
     color: '#181819',
   },

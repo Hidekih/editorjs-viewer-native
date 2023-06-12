@@ -1,197 +1,189 @@
 /* eslint-disable react/display-name */
-import { memo } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { View } from 'react-native';
 
-import type { IEditorJsViwerNativeProps, ICreateEditorJsViewerProps } from '../types';
-import {
-  Delimiter,
-  FallbackBlock,
-  Header,
-  ImageFrame,
-  LinkTool,
-  List,
-  Paragraph,
-  Personality,
-  Quote,
-  SimpleImage
-} from '../components';
+import type { IEditorJsViwerNativeProps, ICreateEditorJsViewerProps, IComponentObject, IComponentBlockProps } from '../types';
+import { Delimiter } from '../components/Delimiter';
+import { FallbackBlock } from '../components/FallbackBlock';
+import { Header } from '../components/Header';
+import { ImageFrame } from '../components/ImageFrame';
+import { LinkTool } from '../components/LinkTool';
+import { List } from '../components/List';
+import { Paragraph } from '../components/Paragraph';
+import { Personality } from '../components/Personality';
+import { Quote } from '../components/Quote';
+import { SimpleImage } from '../components/SimpleImage';
 
 export const createEditorJsViewer = (props?: ICreateEditorJsViewerProps) => {
-  const {
-    delimiter,
-    header,
-    image,
-    linkTool,
-    list,
-    paragraph,
-    personality,
-    simpleImage,
-    quote,
-  } = props?.toolsParser ?? {};
+  const { tools, customTools, showBlockFallback } = props ?? {};
 
-  return memo(({ data, ...rest }: IEditorJsViwerNativeProps) => (
-    <View style={{ width: '100%' }} {...rest}>
-      {data.blocks.map((block, index) => {
-        // Some simpleImage type can be named as `image` but has a difference betwen 'normal' image
-        if (block.type == 'image' && block.data?.file == null) {
-          block.type = 'simpleImage';
-        }
+  return memo(({ data, ...rest }: IEditorJsViwerNativeProps) => {
+    const [blockComponents, setBlockComponents] = useState<IComponentObject | null>(null);
 
-        const isFirstBlock = index == 0;
-        const isLastBlock = index == data.blocks.length - 1;
+    useEffect(() => {
+      const componentToolsObj: IComponentObject = {
+        delimiter: ({ block, containerStyle }: IComponentBlockProps) => {
+          const CustomHeader = tools?.delimiter?.Component;
+          return CustomHeader ? (
+            <CustomHeader data={block.data} containerStyle={containerStyle} />
+          ) : (
+            <Delimiter
+              data={block.data}
+              containerStyle={containerStyle}
+            />
+          );
+        },
+        header: ({ block, containerStyle }: IComponentBlockProps) => {
+          const CustomHeader = tools?.header?.Component;
+          return (CustomHeader ? (
+            <CustomHeader data={block.data} containerStyle={containerStyle} />
+          ) : (
+            <Header
+              data={block.data}
+              style={containerStyle}
+              fontFamily={tools?.header?.fontFamily}
+            />
+          ));
+        },
+        image: ({ block, containerStyle }: IComponentBlockProps) => {
+          const CustomImage = tools?.image?.Component;
+          return CustomImage ? (
+            <CustomImage  data={block.data} containerStyle={containerStyle} />
+          ) : (
+            <ImageFrame
+              data={block.data}
+              captionFontFamily={tools?.image?.captionFontFamily}
+              containerStyle={containerStyle}
+            />
+          );
+        },
+        linkTool: ({ block, containerStyle }: IComponentBlockProps) => {
+          const CustomLinkTool = tools?.linkTool?.Component;
+          return CustomLinkTool ? (
+            <CustomLinkTool data={block.data} containerStyle={containerStyle} />
+          ) : (
+            <LinkTool
+              data={block.data}
+              containerStyle={containerStyle}
+            />
+          );
+        },
+        list: ({ block, containerStyle }: IComponentBlockProps) => {
+          const CustomList = tools?.list?.Component;
+          return CustomList ? (
+            <CustomList data={block.data} containerStyle={containerStyle} />
+          ) : (
+            <List
+              data={block.data}
+              fontFamily={tools?.list?.fontFamily}
+              containerStyle={containerStyle}
+            />
+          );
+        },
+        paragraph: ({ block, containerStyle }: IComponentBlockProps) => {
+          const CustomParagraph = tools?.paragraph?.Component;
+          return CustomParagraph ? (
+            <CustomParagraph data={block.data} containerStyle={containerStyle} />
+          ) : (
+            <Paragraph
+              data={block.data}
+              fontFamily={tools?.paragraph?.fontFamily}
+              style={containerStyle}
+            />
+          );
+        },
+        personality: ({ block, containerStyle }: IComponentBlockProps) => {
+          const CustomPersonality = tools?.personality?.Component;
+          return CustomPersonality ? (
+            <CustomPersonality data={block.data} containerStyle={containerStyle} />
+          ) : (
+            <Personality
+              data={block.data}
+              containerStyle={containerStyle}
+            />
+          );
+        },
+        simpleImage: ({ block, containerStyle }: IComponentBlockProps) => {
+          const CustomSimpleImage = tools?.simpleImage?.Component;
+          return CustomSimpleImage ? (
+            <CustomSimpleImage data={block.data} containerStyle={containerStyle} />
+          ) : (
+            <SimpleImage
+              data={block.data}
+              captionFontFamily={tools?.simpleImage?.captionFontFamily}
+              containerStyle={containerStyle}
+            />
+          );
+        },
+        quote: ({ block, containerStyle }: IComponentBlockProps) => {
+          const CustomQuote = tools?.quote?.Component ?? Quote;
 
-        // Removing default margin top/bottom from first/last element
-        const fixMarginIfIsFirstOrLast = {
-          marginTop: isFirstBlock ? 0 : undefined,
-          marginBottom: isLastBlock ? 0 : undefined
-        };
+          return CustomQuote ? (
+            <CustomQuote data={block.data} containerStyle={containerStyle} />
+          ) : (
+            <Quote
+              data={block.data}
+              quoteFontFamily={tools?.quote?.quoteFontFamily}
+              captionFontFamily={tools?.quote?.captionFontFamily}
+              containerStyle={containerStyle}
+            />
+          );
+        },
+      };
 
-        switch (block.type) {
-          case 'delimiter': {
-            const CustomHeader = delimiter?.CustomComponent;
+      if (customTools) {
+        Object.entries(customTools).forEach(([key, value]) => {
+          if (value.Component) {
+            componentToolsObj[key] = value.Component;
+          }
+        });
+      }
 
-            return CustomHeader ? (
-              <CustomHeader key={block.id} data={block.data} />
-            ) : (
-              <Delimiter
+      setBlockComponents(componentToolsObj);
+    }, [customTools]);
+
+    if (!blockComponents) return null;
+
+    return (
+      <View style={{ width: '100%' }} {...rest}>
+        {data.blocks.map((block, index) => {
+          // Some simpleImage type can be named as `image` but has a difference betwen 'normal' image
+          if (block.type == 'image' && block.data?.file == null) {
+            block.type = 'simpleImage';
+          }
+
+          const isFirstBlock = index == 0;
+          const isLastBlock = index == data.blocks.length - 1;
+
+          // Removing default margin top/bottom from first/last element
+          const overrideMarginIfIsFirstOrLastElement = {
+            marginTop: isFirstBlock ? 0 : undefined,
+            marginBottom: isLastBlock ? 0 : undefined
+          };
+
+          const ComponentByType = blockComponents[block.type];
+
+          if (ComponentByType) {
+            return (
+              <ComponentByType
                 key={block.id}
-                data={block.data}
-                style={fixMarginIfIsFirstOrLast}
+                block={block}
+                containerStyle={overrideMarginIfIsFirstOrLastElement}
               />
             );
           }
 
-          case 'header': {
-            const CustomHeader = header?.CustomComponent;
-
-            return CustomHeader ? (
-              <CustomHeader key={block.id} data={block.data} />
-            ) : (
-              <Header
-                key={block.id}
-                data={block.data}
-                style={fixMarginIfIsFirstOrLast}
-                fontFamily={header?.fontFamily}
-              />
-            );
-          }
-
-          case 'image': {
-            const CustomImage = image?.CustomComponent;
-
-            return CustomImage ? (
-              <CustomImage key={block.id} data={block.data} />
-            ) : (
-              <ImageFrame
-                key={block.id}
-                data={block.data}
-                captionFontFamily={image?.captionFontFamily}
-                style={fixMarginIfIsFirstOrLast}
-              />
-            );
-          }
-
-          case 'linkTool': {
-            const CustomLinkTool = linkTool?.CustomComponent;
-
-            return CustomLinkTool ? (
-              <CustomLinkTool key={block.id} data={block.data} />
-            ) : (
-              <LinkTool
-                key={block.id}
-                data={block.data}
-                style={fixMarginIfIsFirstOrLast}
-              />
-            );
-          }
-
-          case 'list': {
-            const CustomList = list?.CustomComponent;
-
-            return CustomList ? (
-              <CustomList key={block.id} data={block.data} />
-            ) : (
-              <List
-                key={block.id}
-                data={block.data}
-                fontFamily={list?.fontFamily}
-                style={fixMarginIfIsFirstOrLast}
-              />
-            );
-          }
-
-          case 'paragraph': {
-            const CustomParagraph = paragraph?.CustomComponent;
-
-            return CustomParagraph ? (
-              <CustomParagraph key={block.id} data={block.data} />
-            ) : (
-              <Paragraph
-                key={block.id}
-                data={block.data}
-                fontFamily={paragraph?.fontFamily}
-                style={fixMarginIfIsFirstOrLast}
-              />
-            );
-          }
-
-          case 'personality': {
-            const CustomPersonality = personality?.CustomComponent;
-
-            return CustomPersonality ? (
-              <CustomPersonality key={block.id} data={block.data} />
-            ) : (
-              <Personality
-                key={block.id}
-                data={block.data}
-                style={fixMarginIfIsFirstOrLast}
-              />
-            );
-          }
-
-          case 'simpleImage': {
-            const CustomSimpleImage = simpleImage?.CustomComponent;
-
-            return CustomSimpleImage ? (
-              <CustomSimpleImage key={block.id} data={block.data} />
-            ) : (
-              <SimpleImage
-                key={block.id}
-                data={block.data}
-                captionFontFamily={simpleImage?.captionFontFamily}
-                style={fixMarginIfIsFirstOrLast}
-              />
-            );
-          }
-
-          case 'quote': {
-            const CustomQuote = quote?.CustomComponent ?? Quote;
-
-            return CustomQuote ? (
-              <CustomQuote key={block.id} data={block.data} />
-            ) : (
-              <Quote
-                key={block.id}
-                data={block.data}
-                quoteFontFamily={quote?.quoteFontFamily}
-                captionFontFamily={quote?.captionFontFamily}
-                style={fixMarginIfIsFirstOrLast}
-              />
-            );
-          }
-
-          // TODO
-          // case 'customBlockType': {
-          //   return <></>;
-          // }
-
-          default: return props?.unknownBlockFallback ? (
-            <FallbackBlock key={block.id} blockType={block.type} />
+          return showBlockFallback ? (
+            <FallbackBlock
+              key={block.id}
+              blockType={block.type}
+              containerStyle={overrideMarginIfIsFirstOrLastElement}
+            />
           ) : (
             null
           );
-        }
-      })}
-    </View>
-  ));
+        })}
+      </View>
+    );
+  });
 };
