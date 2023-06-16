@@ -66,7 +66,7 @@ const MyHeader = ({ data }: IHeaderProps) => {
 }
 
 const EditorJsViewerNative = createEditorJsViewer({
-  tools: {          // Updated to "tools" in v1 (before was toolsParser)
+  tools: {                // Updated to "tools" in v1 (before was toolsParser)
     header: {
       Component: MyHeader // Updated to "Component" in v1 (before was CustomComponent)
     }
@@ -108,9 +108,9 @@ interface IRandomColeredTextData {
   text: string;
 }
 
-// ! Any componente will receive "data" and "containerStyle"
-// "data" contain the data of block
-// "containerStyle" is a simple style to prevent margim top on first element or margimBottom on last component
+// * Any component will receive "data" and "containerStyle"
+// * "data" contain the data of block
+// * "containerStyle" is a simple style to prevent margin top on first element or margin bottom on last component
 const RandomColeredTextBlock = ({ block, containerStyle }: IComponentBlockProps<IRandomColeredTextData>) => {
   const randomColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
   return (
